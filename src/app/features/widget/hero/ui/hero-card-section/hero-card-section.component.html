@@ -1,0 +1,33 @@
+<section class="hero-card" [ngStyle]="sectionStyle">
+    <!-- overlay -->
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="banner-content text-center mx-auto">
+                <h1 class="text-white display-5 mb-2">
+                    {{ title }}
+                    @if (titleHighlight) {
+                        <span class="title-highlight ms-2">{{ titleHighlight }}</span>
+                    }
+                </h1>
+
+                @if (subtitle) {
+                    <h6 class="text-light mx-auto">{{ subtitle }}</h6>
+                }
+            </div>
+
+            <!-- Panel -->
+            @if (showPanel) {
+                <div class="hero-panel card mb-0">
+                    <ng-content select="[heroPanel]"></ng-content>
+                </div>
+            } @else {
+            <!-- reserve space so height doesn't jump -->
+            @if (reservePanelSpace) {
+                <div class="hero-panel-placeholder" [style.height.px]="reservedPanelHeightPx"></div>
+            }
+        }
+        </div>
+    </div>
+</section>

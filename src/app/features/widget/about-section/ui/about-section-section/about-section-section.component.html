@@ -1,0 +1,100 @@
+<section class="section about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-image mb-4 mb-lg-0">
+                    <div class="about-listing">
+                        <i class="{{ store.data().listing.icon }} text-white mb-2"></i>
+                        <h6 class="fs-16 mb-3 text-white">{{ store.data().listing.title }}</h6>
+
+                        <div class="listing-img">
+                            <div>
+                                <img [src]="store.data().listing.imageUrl" alt="icon">
+                            </div>
+                            <a [routerLink]="store.data().listing.buttonRoute" class="btn btn-warning text-gray-9">
+                                {{ store.data().listing.buttonText }}
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-img">
+                        <img [src]="store.data().mainImageUrl" alt="about">
+                    </div>
+
+                    <div class="about-progress d-inline-flex align-items-center">
+                        <img [src]="store.data().earnings.iconUrl" alt="icon">
+                        <div class="ms-2">
+                            <p class="fs-10 mb-1">{{ store.data().earnings.label }}</p>
+                            <h6 class="fs-13">{{ store.data().earnings.amountText }}</h6>
+                        </div>
+                        <a [routerLink]="store.data().earnings.withdrawRoute" class="btn btn-teal btn-sm fw-normal ms-4">
+                            {{ store.data().earnings.withdrawText }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h6 class="text-primary fs-14 fw-medium mb-2">{{ store.data().content.badgeText }}</h6>
+                    <h2 class="display-6 mb-2">{{ store.data().content.heading }}</h2>
+                    <p class="mb-4">{{ store.data().content.description }}</p>
+
+                    @for (f of store.data().content.features; track $index) {
+                        <div class="d-flex align-items-center" [class.mb-4]="$index === 0">
+              <span class="avatar avatar-xl rounded-circle flex-shrink-0 me-3" [ngClass]="f.avatarClass">
+                <i class="{{ f.icon }} fs-24" [ngClass]="f.iconExtraClass"></i>
+              </span>
+                            <p>{{ f.text }}</p>
+                        </div>
+                    }
+                </div>
+
+                <div class="d-flex align-items-center flex-wrap about-btn gap-2">
+                    <a [routerLink]="store.data().footer.learnMoreRoute" class="btn btn-white d-flex align-items-center">
+                        {{ store.data().footer.learnMoreText }}
+                        <i class="isax isax-arrow-circle-right ms-2"></i>
+                    </a>
+
+                    <div class="avatar-list-stacked avatar-group-md me-2">
+                        @for (av of store.data().footer.avatars; track $index) {
+                            <span class="avatar avatar-rounded">
+                <img class="border border-white" [src]="av" alt="img">
+              </span>
+                        }
+                    </div>
+
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <div class="rating d-flex align-items-center me-2">
+                                @for (s of store.ratingStarsArray(); track s) {
+                                    <i class="fa-solid fa-star filled me-1"></i>
+                                }
+                                <span class="text-gray-9 fs-14">{{ store.data().footer.ratingScoreText }}</span>
+                            </div>
+                        </div>
+                        <p class="fs-14">{{ store.data().footer.reviewsText }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="counter-wrap">
+                    <div class="row">
+                        @for (c of store.data().counters; track $index) {
+                            <div class="col-lg-3 col-md-6">
+                                <app-about-section-card [item]="c"></app-about-section-card>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="about-bg">
+            <img [src]="store.data().bgImages.img1" alt="img" class="about-bg-01">
+            <img [src]="store.data().bgImages.img2" alt="img" class="about-bg-02">
+        </div>
+    </div>
+</section>

@@ -1,0 +1,115 @@
+{
+  "hideOnBase": ["index-2", "index-3", "index-4", "index-5", "index-6"],
+
+  "columns": [
+    {
+      "title": "Pages",
+      "links": [
+        { "label": "Our Team", "routeKey": "team" },
+        { "label": "Pricing Plans", "routeKey": "pricingPlan" },
+        { "label": "Gallery", "routeKey": "gallery" },
+        { "label": "Settings", "routeKey": "profileSettings" },
+        { "label": "Profile", "routeKey": "myProfile" },
+        { "label": "Listings", "routeKey": "agentListings" }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        { "label": "About Us", "routeKey": "aboutUs" },
+        { "label": "Careers", "href": "javascript:void(0);" },
+        { "label": "Blog", "routeKey": "blogGrid" },
+        { "label": "Affiliate Program", "href": "javascript:void(0);" },
+        { "label": "Add Your Listing", "routeKey": "agentListings" },
+        { "label": "Our Partners", "href": "javascript:void(0);" }
+      ]
+    },
+    {
+      "title": "Destinations",
+      "links": [
+        { "label": "Hawai", "href": "javascript:void(0);" },
+        { "label": "Istanbul", "href": "javascript:void(0);" },
+        { "label": "San Diego", "href": "javascript:void(0);" },
+        { "label": "Belgium", "href": "javascript:void(0);" },
+        { "label": "Los Angeles", "href": "javascript:void(0);" },
+        { "label": "Newyork", "href": "javascript:void(0);" }
+      ]
+    },
+    {
+      "title": "Support",
+      "links": [
+        { "label": "Contact Us", "routeKey": "contactUs" },
+        { "label": "Legal Notice", "href": "javascript:void(0);" },
+        { "label": "Privacy Policy", "routeKey": "privacyPolicy" },
+        { "label": "Terms and Conditions", "routeKey": "termsConditions" },
+        { "label": "Chat Support", "routeKey": "chat" },
+        { "label": "Refund Policy", "href": "javascript:void(0);" }
+      ]
+    },
+    {
+      "title": "Services",
+      "links": [
+        { "label": "Hotel", "routeKey": "hotelGrid" },
+        { "label": "Activity Finder", "href": "javascript:void(0);" },
+        { "label": "Flight Finder", "routeKey": "flightGrid" },
+        { "label": "Holiday Rental", "routeKey": "tourGrid" },
+        { "label": "Car Rental", "routeKey": "carGrid" },
+        { "label": "Holiday Packages", "routeKey": "tourDetails" }
+      ]
+    }
+  ],
+
+  "brand": {
+    "homeRouteKey": "index",
+    "logoLight": "assets/img/logo-dark.svg",
+    "logoDark": "assets/img/logo.svg"
+  },
+
+  "stores": {
+    "label": "Available on :",
+    "items": [
+      { "img": "assets/img/icons/googleplay.svg", "href": "javascript:void(0);" },
+      { "img": "assets/img/icons/appstore.svg", "href": "javascript:void(0);" }
+    ]
+  },
+
+  "contact": {
+    "support": {
+      "iconWrapClass": "avatar avatar-lg bg-primary rounded-circle flex-shrink-0",
+      "iconClass": "ti ti-headphones-filled fs-24",
+      "title": "Customer Support",
+      "value": "+1 56589 54598"
+    },
+    "email": {
+      "iconWrapClass": "avatar avatar-lg bg-secondary rounded-circle flex-shrink-0",
+      "iconClass": "ti ti-message fs-24 text-gray-9",
+      "title": "Drop Us an Email",
+      "value": "info@travtech.com"
+    }
+  },
+
+  "footerArt": {
+    "img": "assets/img/bg/footer.svg"
+  },
+
+  "bottom": {
+    "copyrightHtml": "Copyright © 2025. All Rights Reserved, ",
+    "brandName": "Travtech",
+    "brandHref": "javascript:void(0);",
+    "social": [
+      { "iconClass": "fa-brands fa-facebook", "href": "javascript:void(0);" },
+      { "iconClass": "fa-brands fa-x-twitter", "href": "javascript:void(0);" },
+      { "iconClass": "fa-brands fa-instagram", "href": "javascript:void(0);" },
+      { "iconClass": "fa-brands fa-linkedin", "href": "javascript:void(0);" },
+      { "iconClass": "fa-brands fa-pinterest", "href": "javascript:void(0);" }
+    ],
+    "cards": [
+      { "img": "assets/img/icons/card-01.svg", "href": "javascript:void(0);" },
+      { "img": "assets/img/icons/card-02.svg", "href": "javascript:void(0);" },
+      { "img": "assets/img/icons/card-03.svg", "href": "javascript:void(0);" },
+      { "img": "assets/img/icons/card-04.svg", "href": "javascript:void(0);" },
+      { "img": "assets/img/icons/card-05.svg", "href": "javascript:void(0);" },
+      { "img": "assets/img/icons/card-06.svg", "href": "javascript:void(0);" }
+    ]
+  }
+}

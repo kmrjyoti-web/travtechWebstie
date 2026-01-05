@@ -1,0 +1,14 @@
+<div class="video-wrap">
+    <lightgallery
+            [settings]="settings"
+            [onInit]="onInit"
+            [attr.size]="size"
+    >
+        <a
+                [class]="item.anchorClass"
+                [attr.src]="item.url"
+        >
+            <i [class]="item.iconClass"></i>
+        </a>
+    </lightgallery>
+</div>

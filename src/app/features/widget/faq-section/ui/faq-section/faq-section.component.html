@@ -1,0 +1,58 @@
+<section class="faq-section section">
+  <div class="container">
+    <div class="faq-sec">
+
+      @if (store.vm(); as vm) {
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-10 text-center aos" data-aos="fade-up" data-aos-duration="2000">
+            <div class="section-header text-center">
+              <h2 class="mb-2" [innerHTML]="vm.header.titleHtml"></h2>
+              <p class="sub-title">{{ vm.header.subTitle }}</p>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (store.vm(); as vm) {
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="accordion accordion-flush" id="accordionFaq">
+              @for (item of vm.items; track item; let i = $index) {
+                <div
+                  class="accordion-item mb-3 pb-3 aos"
+                  [class.show]="item.isOpen"
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  >
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      [class.collapsed]="!item.isOpen"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      [attr.data-bs-target]="'#faq-collapse' + item.id"
+                      [attr.aria-expanded]="item.isOpen"
+                      [attr.aria-controls]="'faq-collapse' + item.id"
+                      (click)="store.openByIndex(i)"
+                      >
+                      {{ item.question }}
+                    </button>
+                  </h2>
+                  <div
+                    class="accordion-collapse collapse"
+                    [class.show]="item.isOpen"
+                    [id]="'faq-collapse' + item.id"
+                    data-bs-parent="#accordionFaq"
+                    >
+                    <div class="accordion-body" [innerHTML]="item.answerHtml"></div>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</section>

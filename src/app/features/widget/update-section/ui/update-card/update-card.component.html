@@ -1,0 +1,34 @@
+<div class="update-sec">
+  <div class="section-header text-center">
+    <h2 class="mb-1">{{ vm.title }}</h2>
+    <p class="sub-title">{{ vm.subTitle }}</p>
+  </div>
+
+  <div class="input-group justify-content-center mx-auto">
+    <span class="input-group-text px-1">
+      <i [class]="vm.iconClass"></i>
+    </span>
+
+    <input
+      type="email"
+      class="form-control"
+      [placeholder]="vm.placeholder"
+      [ngModel]="email"
+      (ngModelChange)="onInput($event)"
+      />
+
+    <button type="button" class="btn btn-primary" (click)="onSubmit()">
+      {{ vm.buttonText }}
+    </button>
+  </div>
+
+  @if (error) {
+    <div class="text-center mt-2">
+      <small class="text-danger">{{ error }}</small>
+    </div>
+  }
+
+  <div class="update-bg">
+    <img [src]="vm.bgImageUrl" alt="img">
+  </div>
+</div>

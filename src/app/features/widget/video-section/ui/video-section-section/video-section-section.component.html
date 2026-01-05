@@ -1,0 +1,7 @@
+@for (it of (store.vm()?.items ?? []); track trackById($index, it)) {
+  <app-video-section-card
+    [item]="it"
+    [settings]="store.vm()?.settings"
+    >
+  </app-video-section-card>
+}

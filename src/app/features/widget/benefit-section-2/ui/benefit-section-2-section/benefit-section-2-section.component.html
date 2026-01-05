@@ -1,0 +1,27 @@
+<section class="section benefit-section bg-light-300">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center aos"
+        [attr.data-aos]="store.vm()?.header?.aosName || 'fade-up'"
+        [attr.data-aos-duration]="store.vm()?.header?.aosDuration || 2000">
+        <div class="section-header text-center">
+          <h2 class="mb-2">
+            {{ store.vm()?.header?.titlePrefix }}
+            <span class="text-primary text-decoration-underline">{{ store.vm()?.header?.titleHighlight }}</span>
+            {{ store.vm()?.header?.titleSuffix }}
+          </h2>
+          <p class="sub-title">{{ store.vm()?.header?.subtitle }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      @for (b of (store.vm()?.items || []); track trackById($index, b)) {
+        <div class="col-sm-6 col-lg-3 d-flex"
+          >
+          <app-benefit-section-2-card [card]="b"></app-benefit-section-2-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>

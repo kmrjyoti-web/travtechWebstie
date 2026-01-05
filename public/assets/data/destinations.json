@@ -1,0 +1,58 @@
+[
+  {
+    "destination_id": "vietnam",
+    "title": "VIETNAM",
+    "image_url": "assets/img/destination/destination-01.jpg",
+    "rating": 5,
+    "reviews_count": 452,
+    "route": "/destination/vietnam",
+    "aos": { "name": "fade-up", "duration": 2000 },
+    "stats": [
+      { "label": "Flights", "count": 21, "icon": "isax-airplane", "color_class": "text-indigo" },
+      { "label": "Hotels", "count": 15, "icon": "isax-buildings", "color_class": "text-cyan" },
+      { "label": "Cruises", "count": 6, "icon": "isax-ship", "color_class": "text-success" }
+    ]
+  },
+  {
+    "destination_id": "thailand",
+    "title": "Thailand",
+    "image_url": "assets/img/destination/destination-02.jpg",
+    "rating": 5,
+    "reviews_count": 400,
+    "route": "/destination/thailand",
+    "aos": { "name": "fade-up", "duration": 2000 },
+    "stats": [
+      { "label": "Flights", "count": 21, "icon": "isax-airplane", "color_class": "text-indigo" },
+      { "label": "Hotels", "count": 15, "icon": "isax-buildings", "color_class": "text-cyan" },
+      { "label": "Cruises", "count": 6, "icon": "isax-ship", "color_class": "text-success" }
+    ]
+  },
+  {
+    "destination_id": "australia",
+    "title": "Australia",
+    "image_url": "assets/img/destination/destination-03.jpg",
+    "rating": 5,
+    "reviews_count": 400,
+    "route": "/destination/australia",
+    "aos": { "name": "fade-up", "duration": 2000 },
+    "stats": [
+      { "label": "Flights", "count": 21, "icon": "isax-airplane", "color_class": "text-indigo" },
+      { "label": "Hotels", "count": 15, "icon": "isax-buildings", "color_class": "text-cyan" },
+      { "label": "Cruises", "count": 6, "icon": "isax-ship", "color_class": "text-success" }
+    ]
+  },
+  {
+    "destination_id": "brazil",
+    "title": "Brazil",
+    "image_url": "assets/img/destination/destination-04.jpg",
+    "rating": 5,
+    "reviews_count": 422,
+    "route": "/destination/brazil",
+    "aos": { "name": "fade-up", "duration": 2000 },
+    "stats": [
+      { "label": "Flights", "count": 21, "icon": "isax-airplane", "color_class": "text-indigo" },
+      { "label": "Hotels", "count": 15, "icon": "isax-buildings", "color_class": "text-cyan" },
+      { "label": "Cruises", "count": 6, "icon": "isax-ship", "color_class": "text-success" }
+    ]
+  }
+]

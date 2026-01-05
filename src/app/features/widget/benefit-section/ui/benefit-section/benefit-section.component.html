@@ -1,0 +1,31 @@
+<section class="section work-section-six">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xxl-3 col-lg-4">
+        <div class="section-header-six mb-0 aos"
+          [attr.data-aos]="store.vm()?.header?.aosName || 'fade-up'"
+          [attr.data-aos-duration]="store.vm()?.header?.aosDuration || 2000">
+
+          <span class="badge badge-soft-primary rounded-pill mb-1">
+            {{ store.vm()?.header?.badge }}
+          </span>
+
+          <h2>
+            {{ store.vm()?.header?.title }}<span class="text-primary">{{ store.vm()?.header?.titleDot }}</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-xxl-9 col-lg-8">
+        <div class="row align-items-center">
+          @for (it of (store.vm()?.items || []); track trackById($index, it)) {
+            <div class="col-md-4 col-sm-6"
+              >
+              <app-benefit-section-card [item]="it"></app-benefit-section-card>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

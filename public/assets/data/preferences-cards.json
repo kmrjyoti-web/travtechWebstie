@@ -1,0 +1,47 @@
+[
+  {
+    "preference_id": "eco-tourism",
+    "title": "Ecotourism",
+    "image_url": "assets/img/tours/tours-30.jpg",
+    "count": 25,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "adventure-tour",
+    "title": "Adventure Tour",
+    "image_url": "assets/img/tours/tours-31.jpg",
+    "count": 47,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "group-tours",
+    "title": "Group Tours",
+    "image_url": "assets/img/tours/tours-32.jpg",
+    "count": 38,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "beach-tours",
+    "title": "Beach Tours",
+    "image_url": "assets/img/tours/tours-33.jpg",
+    "count": 54,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "honeymoon",
+    "title": "Honey Moon",
+    "image_url": "assets/img/tours/tours-34.jpg",
+    "count": 22,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  }
+]

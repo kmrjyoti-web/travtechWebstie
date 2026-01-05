@@ -1,0 +1,22 @@
+@if (store.config()) {
+    <app-hero-card-section
+            [backgroundUrl]="store.config()!.backgroundUrl"
+            [title]="store.config()!.title"
+            [titleHighlight]="store.config()!.titleHighlight || ''"
+            [subtitle]="store.config()!.subtitle || ''"
+            [minHeightPx]="store.config()!.minHeightPx"
+            [parallax]="store.config()!.parallax"
+            [showPanel]="store.panelEnabled()"
+            [reservePanelSpace]="store.config()!.panel.reserveSpaceWhenHidden"
+            [reservedPanelHeightPx]="store.config()!.panel.reservedHeightPx"
+    >
+        <div heroPanel>
+            <app-hero-tab-panel
+                    [tabs]="store.config()!.panel.tabs"
+                    (submitTab)="onSubmit($event)"
+            />
+        </div>
+    </app-hero-card-section>
+} @else {
+    <div class="p-4 text-center">Loading hero...</div>
+}

@@ -1,0 +1,155 @@
+{
+  "header": {
+    "title_prefix": "Our",
+    "title_highlight": "Trending",
+    "title_suffix": "Places",
+    "subtitle": "Here are some famous tourist places around the world that are known for their historical significance, natural beauty, or cultural impact",
+    "view_all_text": "View All Places",
+    "view_all_route": "/hotel/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  "tabs": [
+    { "key": "flight", "label": "Flights", "target_id": "flight-list" },
+    { "key": "hotel", "label": "Hotels",  "target_id": "Hotels-list", "default": true },
+    { "key": "car", "label": "Cars", "target_id": "Cars-list" },
+    { "key": "cruise", "label": "Cruise", "target_id": "Cruise-list" },
+    { "key": "tour", "label": "Tour", "target_id": "Tour-list" }
+  ],
+  "data": {
+    "hotel": [
+      {
+        "id": "hotel-01",
+        "image_url": "assets/img/hotels/hotel-01.jpg",
+        "badge_text": "Trending",
+        "badge_class": "bg-info",
+        "rating": 5.0,
+        "reviews_text": "(400 Reviews)",
+        "title": "Hotel Plaza Athenee",
+        "location": "Ciutat Vella, Barcelona",
+        "price": 500,
+        "price_unit": "/ Night",
+        "user_name": "Beth Williams",
+        "user_avatar_url": "assets/img/users/user-01.jpg",
+        "route": "/hotel/details",
+        "facilities": ["isax-wifi", "isax-scissor", "isax-profile-2user", "isax-wind-2"],
+        "facilities_more": "+2"
+      },
+      {
+        "id": "hotel-02",
+        "image_url": "assets/img/hotels/hotel-02.jpg",
+        "badge_text": "Hot",
+        "badge_class": "bg-danger",
+        "rating": 5.0,
+        "reviews_text": "(210 Reviews)",
+        "title": "A Luxury Hotel",
+        "location": "Downtown, New York",
+        "price": 500,
+        "price_unit": "/ Night",
+        "user_name": "Kyle Woodward",
+        "user_avatar_url": "assets/img/users/user-06.jpg",
+        "route": "/hotel/details",
+        "facilities": ["isax-wifi", "isax-scissor", "isax-personalcard"],
+        "facilities_more": ""
+      },
+      {
+        "id": "hotel-03",
+        "image_url": "assets/img/hotels/hotel-03.jpg",
+        "badge_text": "",
+        "badge_class": "",
+        "rating": 4.9,
+        "reviews_text": "(60 Reviews)",
+        "title": "The Start Hotel, Casino",
+        "location": "Paris, France",
+        "price": 740,
+        "price_unit": "/ Night",
+        "user_name": "Jeanette Lupo",
+        "user_avatar_url": "assets/img/users/user-02.jpg",
+        "route": "/hotel/details",
+        "facilities": ["isax-wifi", "isax-note-text", "isax-wind-2"],
+        "facilities_more": ""
+      }
+    ],
+    "flight": [
+      {
+        "id": "flight-01",
+        "image_url": "assets/img/flight/flight-01.jpg",
+        "badge_left_text": "Cheapest",
+        "badge_left_class": "bg-indigo",
+        "rating": 4.3,
+        "from_city": "Toronto",
+        "to_city": "Bangkok",
+        "title": "AstraFlight 215",
+        "airline_name": "Indigo",
+        "airline_icon_url": "assets/img/icons/airindia.svg",
+        "stop_text": "1-stop at Frankfurt",
+        "date_text": "Sep 04, 2024 - Sep 07, 2024",
+        "price_from": 300,
+        "seats_left": "22 Seats Left",
+        "user_avatar_url": "assets/img/users/user-11.jpg",
+        "route": "/flight/details"
+      }
+    ],
+    "car": [
+      {
+        "id": "car-06",
+        "image_url": "assets/img/cars/car-06.jpg",
+        "badge_text": "Trending",
+        "badge_class": "bg-info",
+        "type_badge": "Sedan",
+        "title": "Toyota Camry SE 400",
+        "location": "Ciutat Vella, Barcelona",
+        "fuel": "Hybrid",
+        "gear": "Manual",
+        "travelled": "14,000 KM",
+        "price": 500,
+        "price_unit": "/ day",
+        "rating": 5.0,
+        "reviews_text": "(400 Reviews)",
+        "user_avatar_url": "assets/img/users/user-08.jpg",
+        "route": "/car/details"
+      }
+    ],
+    "cruise": [
+      {
+        "id": "cruise-05",
+        "image_url": "assets/img/cruise/cruise-05.jpg",
+        "badge_text": "Trending",
+        "badge_class": "bg-info",
+        "user_name": "Beth Williams",
+        "user_avatar_url": "assets/img/users/user-08.jpg",
+        "rating": 4.9,
+        "rating_count_text": "(400)",
+        "title": "Super Aquamarine",
+        "location": "Ciutat Vella, Barcelona",
+        "year": "2021",
+        "guests": "4",
+        "width": "88.47 m",
+        "speed": "19 Knots",
+        "price": 500,
+        "price_unit": "/ day",
+        "route": "/cruise/details",
+        "facilities": ["isax-home-wifi", "isax-scissor", "isax-profile-2user", "isax-wind-2"],
+        "facilities_more": "+2"
+      }
+    ],
+    "tour": [
+      {
+        "id": "tour-07",
+        "image_url": "assets/img/tours/tours-07.jpg",
+        "badge_text": "Trending",
+        "badge_class": "bg-info",
+        "category": "Ecotourism",
+        "rating": 5.0,
+        "reviews_text": "(105 Reviews)",
+        "title": "Rainbow Mountain Valley",
+        "location": "Ciutat Vella, Barcelona",
+        "price_current": 500,
+        "price_old": 789,
+        "duration_text": "4 Day,3 Night",
+        "guests_text": "14 Guests",
+        "user_avatar_url": "assets/img/users/user-08.jpg",
+        "route": "/tour/details"
+      }
+    ]
+  }
+}

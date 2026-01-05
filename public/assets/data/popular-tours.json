@@ -1,0 +1,64 @@
+{
+  "header": {
+    "badge": "Top Rated Tours",
+    "title": "Popular Tours Around the World",
+    "title_dot": ".",
+    "view_all_text": "View All Categories",
+    "view_all_route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  "wrapper": {
+    "class": "cars-slider owl-dot-bottom aos row",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  "items": [
+    {
+      "id": "tours-07",
+      "image_url": "assets/img/tours/tours-07.jpg",
+      "trending_text": "Trending",
+      "category": "Ecotourism",
+      "rating": 5.0,
+      "reviews_count": 105,
+      "title": "Rainbow Mountain Valley",
+      "location": "Ciutat Vella, Barcelona",
+      "price_current": 500,
+      "price_old": 789,
+      "duration_text": "4 Day,3 Night",
+      "guests_text": "14 Guests",
+      "host_avatar_url": "assets/img/users/user-08.jpg",
+      "details_route": "/tour/details/tours-07"
+    },
+    {
+      "id": "tours-08",
+      "image_url": "assets/img/tours/tours-08.jpg",
+      "trending_text": "Trending",
+      "category": "Adventure Tour",
+      "rating": 4.7,
+      "reviews_count": 110,
+      "title": "Mystic Falls",
+      "location": "Oxford Street, London",
+      "price_current": 600,
+      "price_old": 700,
+      "duration_text": "3 Day, 2 Night",
+      "guests_text": "12 Guests",
+      "host_avatar_url": "assets/img/users/user-09.jpg",
+      "details_route": "/tour/details/tours-08"
+    },
+    {
+      "id": "tours-09",
+      "image_url": "assets/img/tours/tours-09.jpg",
+      "trending_text": "Trending",
+      "category": "Summer Trip",
+      "rating": 4.7,
+      "reviews_count": 180,
+      "title": "Crystal Lake",
+      "location": "Princes Street, Edinburgh",
+      "price_current": 300,
+      "price_old": 500,
+      "duration_text": "5 Day, 4 Night",
+      "guests_text": "16 Guests",
+      "host_avatar_url": "assets/img/users/user-10.jpg",
+      "details_route": "/tour/details/tours-09"
+    }
+  ]
+}

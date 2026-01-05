@@ -1,0 +1,42 @@
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 aos"
+        [attr.data-aos]="store.vm()?.header?.aosName || 'fade-up'"
+        [attr.data-aos-duration]="store.vm()?.header?.aosDuration || 2000">
+        <div class="section-header-six">
+          <span class="badge badge-soft-primary rounded-pill mb-1">{{ store.vm()?.header?.badge }}</span>
+          <h2>
+            {{ store.vm()?.header?.title }}<span class="text-primary">{{ store.vm()?.header?.titleDot }}</span>
+          </h2>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="text-end">
+          <a [routerLink]="store.vm()?.header?.viewAllRoute || routes.tourGrid"
+            class="btn btn-dark sec-head-btn">
+            {{ store.vm()?.header?.viewAllText || 'View All Categories' }}
+            <i class="isax isax-arrow-right-3 ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div [class]="store.vm()?.wrapper?.className || 'cars-slider owl-dot-bottom aos row'"
+      [attr.data-aos]="store.vm()?.wrapper?.aosName || 'fade-up'"
+      [attr.data-aos-duration]="store.vm()?.wrapper?.aosDuration || 2000">
+
+      @for (t of (store.vm()?.items || []); track trackById($index, t)) {
+        <div class="col-lg-4">
+          <app-popular-tours-card
+            [card]="t"
+            [isFav]="isFav"
+            [toggleFav]="toggleFav">
+          </app-popular-tours-card>
+        </div>
+      }
+
+    </div>
+  </div>
+</section>

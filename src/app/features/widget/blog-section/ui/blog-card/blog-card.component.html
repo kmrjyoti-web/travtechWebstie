@@ -1,0 +1,28 @@
+<div class="blog-item mb-4 aos" data-aos="fade-up" data-aos-duration="2000">
+    <a [routerLink]="routes[item.routeKey]" class="blog-img">
+        <img [src]="item.image" alt="img">
+    </a>
+
+    <span class="badge bg-primary fs-13 fw-medium">{{ item.badge }}</span>
+
+    <div class="blog-info text-center">
+        <div class="d-inline-flex align-items-center justify-content-center">
+            <div class="d-inline-flex align-items-center border-end pe-3 me-3 mb-2">
+                <a href="javascript:void(0);" class="d-flex align-items-center">
+          <span class="avatar avatar-sm flex-shrink-0 me-2">
+            <img [src]="item.authorAvatar" class="rounded-circle border border-white" alt="img">
+          </span>
+                    <p>{{ item.authorName }}</p>
+                </a>
+            </div>
+
+            <p class="d-inline-flex align-items-center text-white mb-2">
+                <i class="isax isax-calendar-2 me-2"></i>{{ item.dateText }}
+            </p>
+        </div>
+
+        <h5>
+            <a [routerLink]="routes[item.routeKey]">{{ item.title }}</a>
+        </h5>
+    </div>
+</div>

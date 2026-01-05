@@ -1,0 +1,51 @@
+{
+  "header": {
+    "title_prefix": "Our",
+    "title_highlight": "Benefits",
+    "title_suffix": "& Key Advantages",
+    "subtitle": "DreamsTour, a tour operator specializing in dream destinations, offers a variety of benefits for travelers.",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  "items": [
+    {
+      "id": "vip-packages",
+      "title": "VIP Packages",
+      "description": "Include premium seating, meet-and-greet experiences, backstage tours.",
+      "icon": "isax-lock-1",
+      "icon_bg_class": "bg-secondary",
+      "icon_text_class": "text-gray-9",
+      "shadow_icon_text_class": "text-secondary",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    },
+    {
+      "id": "concert-tickets",
+      "title": "Concert Tickets",
+      "description": "A centralized place to buy tickets for various dates of the tour",
+      "icon": "isax-magicpen",
+      "icon_bg_class": "bg-orange",
+      "icon_text_class": "text-white",
+      "shadow_icon_text_class": "text-orange",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    },
+    {
+      "id": "travel-packages",
+      "title": "Travel Packages",
+      "description": "Bundles that include concert tickets, accommodations",
+      "icon": "isax-receipt-add",
+      "icon_bg_class": "bg-purple",
+      "icon_text_class": "text-white",
+      "shadow_icon_text_class": "text-purple",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    },
+    {
+      "id": "best-price",
+      "title": "Best Price Guarantee",
+      "description": "Such as private rehearsals, soundcheck access,",
+      "icon": "isax-location-tick",
+      "icon_bg_class": "bg-teal",
+      "icon_text_class": "text-white",
+      "shadow_icon_text_class": "text-teal",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    }
+  ]
+}

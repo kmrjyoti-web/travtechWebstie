@@ -1,0 +1,45 @@
+.hero-card {
+  position: relative;
+  padding: 100px 0; /* same as your old section */
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.banner-content {
+  max-width: 920px;
+}
+
+.title-highlight {
+  color: #ffffff;
+  opacity: 0.95;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.hero-panel {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* when filters disabled but you want height stable */
+.hero-panel-placeholder {
+  width: 100%;
+}

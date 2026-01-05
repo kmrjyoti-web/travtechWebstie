@@ -1,0 +1,40 @@
+<div class="destination-item mb-4 aos"
+  [attr.data-aos]="card.aosName"
+  [attr.data-aos-duration]="card.aosDuration">
+
+  <img [src]="card.imageUrl" alt="img">
+
+  <div class="destination-info text-center">
+    <div class="destination-content">
+      <h5 class="mb-1 text-white">{{ card.title }}</h5>
+
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="rating d-flex align-items-center me-2">
+          @for (filled of card.stars; track filled; let i = $index) {
+            <i class="fa-solid fa-star me-1" [class.filled]="filled"></i>
+          }
+        </div>
+        <p class="fs-14 text-white">{{ card.reviewsCount }} Reviews</p>
+      </div>
+    </div>
+
+    <div class="destination-overlay bg-white mt-2">
+      <div class="d-flex">
+        @for (s of card.stats; track s; let i = $index) {
+          <div class="col" [class.border-end]="s.borderEnd">
+            <div class="count-info text-center">
+              <span class="d-block mb-1" [ngClass]="s.colorClass">
+                <i class="isax" [ngClass]="s.icon"></i>
+              </span>
+              <h6 class="fs-13 fw-medium">{{ s.countText }}</h6>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <a [routerLink]="card.route" class="overlay-circle-link">
+    <i class="isax isax-arrow-right-1"></i>
+  </a>
+</div>
