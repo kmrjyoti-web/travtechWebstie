@@ -11,7 +11,49 @@
   },
   "overrides": {
     "tmp": "^0.2.4",
-    "external-editor": "^2.2.0"
+    "external-editor": "^2.2.0",
+    "@ngrx/signals": {
+      "@angular/core": "$@angular/core"
+    },
+    "ngx-bootstrap": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common",
+      "@angular/animations": "$@angular/animations",
+      "@angular/forms": "$@angular/forms",
+      "@angular/router": "$@angular/router"
+    },
+    "ng-apexcharts": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common"
+    },
+    "ngx-mask": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common"
+    },
+    "ngx-editor": {
+      "@angular/core": "$@angular/core"
+    },
+    "primeng": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common",
+      "@angular/animations": "$@angular/animations",
+      "@angular/forms": "$@angular/forms",
+      "@angular/platform-browser": "$@angular/platform-browser",
+      "@angular/router": "$@angular/router"
+    },
+    "@angular/google-maps": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common"
+    },
+    "@angular/material": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common",
+      "@angular/animations": "$@angular/animations"
+    },
+    "@angular/cdk": {
+      "@angular/core": "$@angular/core",
+      "@angular/common": "$@angular/common"
+    }
   },
   "private": true,
   "dependencies": {
