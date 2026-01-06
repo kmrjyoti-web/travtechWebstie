@@ -108,6 +108,7 @@ export interface SideBar {
   route?: string;
   img?:string;
   twoTitle?:boolean;
+  routeParam?: string;
   menu: SideBarMenu[];
 
 }

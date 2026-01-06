@@ -61,8 +61,8 @@
 
   "brand": {
     "homeRouteKey": "index",
-    "logoLight": "assets/img/logo-dark.svg",
-    "logoDark": "assets/img/logo.svg"
+    "logoLight": "assets/img/travvellis-logo1.png",
+    "logoDark": "assets/img/travvellis-logo1.png"
   },
 
   "stores": {

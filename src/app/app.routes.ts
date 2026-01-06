@@ -77,6 +77,7 @@ export const routes: Routes = [
         children:[
       { path: 'tour-list', loadComponent: () => import('./features/tour/tour-list/tour-list.component').then(m => m.TourListComponent) },
       { path: 'tour-grid', loadComponent: () => import('./features/tour/tour-grid/tour-grid.component').then(m => m.TourGridComponent) },
+      { path: 'tour-grid/:type', loadComponent: () => import('./features/tour/tour-grid/tour-grid.component').then(m => m.TourGridComponent) },
       { path: 'tour-details', loadComponent: () => import('./features/tour/tour-details/tour-details.component').then(m => m.TourDetailsComponent) },
       { path: 'tour-details/:url', loadComponent: () => import('./features/tour/tour-details/tour-details.component').then(m => m.TourDetailsComponent) },
       { path: ':url', loadComponent: () => import('./features/tour/tour-details/tour-details.component').then(m => m.TourDetailsComponent) },

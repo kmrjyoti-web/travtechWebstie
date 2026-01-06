@@ -1,6 +1,7 @@
 import { PreferencesCardDto } from '../dto/preferences-card.dto';
 import { PreferencesCardVm } from './preferences-card.model';
 import { prefixDocApiUrl } from '../../../../shared/utils/image-url.util';
+import { routes } from '../../../../shared/routes/routes';
 
 export class PreferencesCardMapper {
     static fromDto(dto: PreferencesCardDto): PreferencesCardVm {
@@ -16,7 +17,7 @@ export class PreferencesCardMapper {
             count: Number(dto.count ?? 0),
             countText: `${Number(dto.count ?? 0)} ${suffix}`,
 
-            route: dto.route,
+            route: [routes.tourGrid, dto.preference_id],
 
             aosName,
             aosDuration,

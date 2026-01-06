@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { routes } from '../../../shared/routes/routes';
-import { Router, RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { MatSliderModule } from '@angular/material/slider';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CommonCounterComponent } from '../../common/common-counter/common-counter.component';
+import { routes } from '../../../shared/routes/routes';
+import { TourGridStore } from './state/tour-grid.store';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-tour-grid',
+  standalone: true,
   imports: [
     CommonModule,
     MatSliderModule,
@@ -20,10 +23,22 @@ import { CommonCounterComponent } from '../../common/common-counter/common-count
   styleUrl: './tour-grid.component.scss'
 })
 export class TourGridComponent {
-public routes=routes;
-    time: Date | null = null; // Bind this to the p-calendar
-    constructor(private router: Router) {
-    }
+  public routes = routes;
+  public store = inject(TourGridStore);
+  private route = inject(ActivatedRoute);
+
+  time: Date | null = null; 
+  
+  constructor() {
+    this.route.params.subscribe((params: Params) => {
+      const type = params['type'];
+      if (type) {
+        this.store.loadByFilter(type);
+      } else {
+         this.store.loadByFilter('india');
+      }
+    });
+  }
   isMore : boolean[]=[false];
   value!: number;
   bsValue=new Date();
