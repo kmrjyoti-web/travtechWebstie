@@ -2,7 +2,7 @@
   {
     "preference_id": "religious",
     "title": "Religious",
-    "image_url": "assets/img/tours/tours-30.jpg",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767922240/spiritual_travtech_zcnz3q.jpg",
     "count": 25,
     "count_suffix": "Tours",
     "route": "/tour/grid/religious",
@@ -11,7 +11,7 @@
   {
     "preference_id": "adventure-tour",
     "title": "Adventure Tour",
-    "image_url": "assets/img/tours/tours-31.jpg",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767922713/AdventureTour_qlfh7r.jpg",
     "count": 47,
     "count_suffix": "Tours",
     "route": "/tour/grid",
@@ -20,7 +20,7 @@
   {
     "preference_id": "group-tours",
     "title": "Group Tours",
-    "image_url": "assets/img/tours/tours-32.jpg",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767922909/GroupTours_yjmdxa.jpg",
     "count": 38,
     "count_suffix": "Tours",
     "route": "/tour/grid",
