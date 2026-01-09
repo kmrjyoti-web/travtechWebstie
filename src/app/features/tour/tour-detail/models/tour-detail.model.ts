@@ -244,6 +244,31 @@ export type PackageJsonConfig = {
     mapping?: any;
     fromLocation?: LocationDetail;
     toLocation?: LocationDetail;
+    
+    // ✅ New fields
+    images?: {
+        headerImage?: string;
+        itineraryImages?: string[];
+        gallery?: { imageUrl: string; altText?: string; aspectRatio?: string }[];
+    };
+    headerImage?: string;
+    imageGallery?: string[];
+    itineraryImages?: string[];
+    seo_detail?: {
+        title?: string;
+        metaDescription?: string;
+        meta_description?: string;
+        keywords?: string[];
+        meta_keywords?: string;
+        canonicalUrl?: string;
+        canonical_url?: string;
+        ogTitle?: string;
+        og_title?: string;
+        ogDescription?: string;
+        og_description?: string;
+        ogImage?: string;
+        og_image?: string;
+    };
 };
 
 export type TourImage = {

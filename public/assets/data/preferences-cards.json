@@ -29,7 +29,7 @@
   {
     "preference_id": "beach-tours",
     "title": "Beach Tours",
-    "image_url": "assets/img/tours/tours-33.jpg",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767929575/beach-tours_td9gg4.jpg",
     "count": 54,
     "count_suffix": "Tours",
     "route": "/tour/grid",
@@ -38,7 +38,7 @@
   {
     "preference_id": "honeymoon",
     "title": "Honey Moon",
-    "image_url": "assets/img/tours/tours-34.jpg",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767929718/Honey-Moon-tour_e9pa2j.jpg",
     "count": 22,
     "count_suffix": "Tours",
     "route": "/tour/grid",

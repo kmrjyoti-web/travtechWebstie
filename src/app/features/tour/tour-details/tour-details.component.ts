@@ -8,7 +8,7 @@
 //   signal,
 // } from '@angular/core';
 // import {ActivatedRoute, RouterLink} from '@angular/router';
-// import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+// import { DomSanitizer, SafeResourceUrl, Title, Meta } from '@angular/platform-browser';
 // import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 //
 // import { TourDetailStore } from '../tour-detail/state/tour-detail.store';
@@ -30,6 +30,7 @@
 //   private readonly destroyRef = inject(DestroyRef);
 //   private readonly sanitizer = inject(DomSanitizer);
 //   private readonly store = inject(TourDetailStore);
+
 //
 //   // ✅ Template uses: @let t = trip();
 //   // Try multiple common fields from store.vm()
@@ -1136,7 +1137,7 @@ import {
   signal,
 } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl, Title, Meta } from '@angular/platform-browser';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { GalleriaModule } from 'primeng/galleria';
@@ -1171,6 +1172,18 @@ type Trip = {
     heroImage?: string;
     activityImages?: { day: number; activity: string; imageUrl: string }[];
   };
+  headerImage?: string;
+  seo_detail?: {
+    title?: string;
+    meta_description?: string;
+    meta_keywords?: string;
+    canonical_url?: string;
+    og_title?: string;
+    og_description?: string;
+    og_image?: string;
+  };
+  imageGallery?: string[];
+  itineraryImages?: string[];
 };
 
 type TripDay = {
@@ -1257,6 +1270,8 @@ export class TourDetailsComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
   private readonly sanitizer = inject(DomSanitizer);
+  private readonly titleService = inject(Title);
+  private readonly metaService = inject(Meta);
 
   readonly store = inject(TourDetailStore);
   readonly vm = this.store.vm;
@@ -1322,6 +1337,19 @@ export class TourDetailsComponent {
 
           media: doc.media,
 
+          headerImage: doc.headerImage ?? doc.images?.headerImage,
+          seo_detail: {
+            title: doc.seo_detail?.title,
+            meta_description: doc.seo_detail?.meta_description ?? doc.seo_detail?.metaDescription,
+            meta_keywords: Array.isArray(doc.seo_detail?.keywords) ? doc.seo_detail?.keywords.join(', ') : doc.seo_detail?.meta_keywords,
+            canonical_url: doc.seo_detail?.canonical_url ?? doc.seo_detail?.canonicalUrl,
+            og_title: doc.seo_detail?.og_title ?? doc.seo_detail?.ogTitle,
+            og_description: doc.seo_detail?.og_description ?? doc.seo_detail?.ogDescription,
+            og_image: doc.seo_detail?.og_image ?? doc.seo_detail?.ogImage,
+          },
+          imageGallery: (doc.imageGallery ?? doc.images?.gallery?.map((g: any) => g.imageUrl ?? g)) ?? [],
+          itineraryImages: (doc.itineraryImages ?? doc.images?.itineraryImages) ?? [],
+
           days: ((doc.itinerary?.days || doc.days) ?? []).map((d: any) => ({
             ...d,
             dayNumber: Number(d.day || d.dayNumber),
@@ -1383,26 +1411,51 @@ export class TourDetailsComponent {
         if (typeof firstDay === 'number' && this.activeDay() === -1) {
           this.activeDay.set(firstDay);
         }
+
+        // ✅ SEO Binding
+        if (normalized.seo_detail) {
+          if (normalized.seo_detail.title) this.titleService.setTitle(normalized.seo_detail.title);
+          if (normalized.seo_detail.meta_description) this.metaService.updateTag({ name: 'description', content: normalized.seo_detail.meta_description });
+          if (normalized.seo_detail.meta_keywords) this.metaService.updateTag({ name: 'keywords', content: normalized.seo_detail.meta_keywords });
+          if (normalized.seo_detail.og_title) this.metaService.updateTag({ property: 'og:title', content: normalized.seo_detail.og_title });
+          if (normalized.seo_detail.og_description) this.metaService.updateTag({ property: 'og:description', content: normalized.seo_detail.og_description });
+          if (normalized.seo_detail.og_image) this.metaService.updateTag({ property: 'og:image', content: normalized.seo_detail.og_image });
+        }
+
+        // ✅ Gallery Logic: imageGallery > itineraryImages > Hide
+        const gal = normalized.imageGallery ?? [];
+        const itin = normalized.itineraryImages ?? [];
+        const rawImages = (gal.length > 0) ? gal : itin;
+        
+        console.log('DEBUG: Normalized Gallery Sources:', { 
+             gal, 
+             itin,
+             chosen: rawImages
+        });
+        
+        
+        const finalItems = rawImages.map(item => {
+            let url = '';
+            if (typeof item === 'string') {
+                url = item;
+            } else if (typeof item === 'object' && item !== null) {
+                // @ts-ignore
+                url = item.largeUrl || item.imageUrl || item.url || '';
+            }
+            return {
+                largeUrl: url,
+                thumbUrl: url,
+                alt: normalized.tripTitle || 'Tour Image'
+            };
+        });
+
+        const cleaned = finalItems.filter((x) => {
+          const l = (x.largeUrl || '').trim();
+          const t = (x.thumbUrl || '').trim();
+          return l && t && !this.failedUrls.has(l) && !this.failedUrls.has(t);
+        });
+        this.galleryItems.set(cleaned);
       }
-
-      // ✅ 1) try bannerImages from API
-      const banners = (v as any)?.model?.bannerImages ?? [];
-      const bannerItems = this.normalizeBannerImages(banners);
-
-      // ✅ 2) fallback from doc.media + hotel images
-      const fallbackItems = this.buildGalleryFallback(this.trip());
-
-      // ✅ final gallery
-      const finalItems = bannerItems.length ? bannerItems : fallbackItems;
-
-      // ✅ also drop already-known failed urls
-      const cleaned = finalItems.filter((x) => {
-        const l = (x.largeUrl || '').trim();
-        const t = (x.thumbUrl || '').trim();
-        return l && t && !this.failedUrls.has(l) && !this.failedUrls.has(t);
-      });
-
-      this.galleryItems.set(cleaned);
 
       // ✅ refresh map if open
       if (this.viewMode() === 'map') {
@@ -1630,6 +1683,7 @@ export class TourDetailsComponent {
   // ----------------------------
   // ✅ Existing helpers
   // ----------------------------
+  headerImage = computed(() => this.trip()?.headerImage);
   durationDays = computed(() => this.trip()?.days?.length ?? 0);
 
   firstGeo = computed(() => {

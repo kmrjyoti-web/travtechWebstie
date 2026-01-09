@@ -367,3 +367,39 @@
   border-radius: 12px;
   overflow: hidden;
 }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+  color: #ffffff;
+
+  h2,
+  .breadcrumb-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .breadcrumb-item,
+  .breadcrumb-item a,
+  .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .breadcrumb-item a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+  }
+}

@@ -317,6 +317,13 @@ export class TourDetailMapper {
             mapping: first.mapping,
             fromLocation: first.fromLocation,
             toLocation: first.toLocation,
+            
+            // ✅ Pass through missing fields
+            images: first.images,
+            headerImage: first.headerImage,
+            imageGallery: first.imageGallery,
+            itineraryImages: first.itineraryImages,
+            seo_detail: first.seo_detail,
         };
     }
 }
