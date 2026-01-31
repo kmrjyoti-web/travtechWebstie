@@ -1,0 +1,40 @@
+{
+  "header": {
+    "badge": "How it Works",
+    "title": "Here’s a breakdown of how our services work",
+    "title_dot": ".",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  "items": [
+    {
+      "id": "checking-availability",
+      "step": "01",
+      "bg_class": "bg-teal-trans",
+      "icon_class": "isax-buildings-25",
+      "icon_color_class": "text-teal",
+      "title": "Checking Availability",
+      "description": "Ensure that the tour is available on the dates you plan to travel. Browse available tours in your destination.",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    },
+    {
+      "id": "booking-confirmation",
+      "step": "02",
+      "bg_class": "bg-prime-trans",
+      "icon_class": "isax-calendar-edit5",
+      "icon_color_class": "text-primary",
+      "title": "Booking & Confirmation",
+      "description": "Upon arrival, check in at our reception. Our friendly staff will guide you through",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    },
+    {
+      "id": "enjoy-your-stay",
+      "step": "03",
+      "bg_class": "bg-purple-trans",
+      "icon_class": "isax-direct-send5",
+      "icon_color_class": "text-purple",
+      "title": "Enjoy Your Stay",
+      "description": "Make sure to be at the meeting point on time, Ask questions and enjoy the experience!",
+      "aos": { "name": "fade-up", "duration": 2000 }
+    }
+  ]
+}

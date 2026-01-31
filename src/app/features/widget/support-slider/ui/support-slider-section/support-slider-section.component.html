@@ -1,0 +1,15 @@
+<section class="support-section" [ngClass]="store.data()?.bgClass ?? 'bg-primary'">
+  <div
+    class="horizontal-slide d-flex"
+    [attr.data-direction]="store.data()?.direction ?? 'left'"
+    [attr.data-speed]="store.data()?.speed ?? 'slow'"
+    >
+    <div class="slide-list d-flex">
+      @for (it of (store.data()?.items ?? []); track it) {
+        <app-support-slider-card
+          [item]="it"
+        ></app-support-slider-card>
+      }
+    </div>
+  </div>
+</section>

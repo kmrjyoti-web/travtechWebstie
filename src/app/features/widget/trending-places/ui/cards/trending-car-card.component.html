@@ -1,0 +1,84 @@
+<div class="place-item mb-4 flex-fill">
+  <div class="place-img">
+    <div class="slide-images">
+      <a [routerLink]="item.route">
+        <img [src]="item.image_url" class="img-fluid" alt="img">
+      </a>
+    </div>
+
+    <div class="fav-item">
+      <a href="javascript:void(0);"
+        class="fav-icon"
+        [ngClass]="{ selected: favSelected() }"
+        (click)="onFav($event)">
+        <i class="isax isax-heart5"></i>
+      </a>
+
+      @if (item.badge_text) {
+        <span class="badge d-inline-flex align-items-center"
+          [ngClass]="item.badge_class"
+          >
+          <i class="isax isax-ranking me-1"></i>{{ item.badge_text }}
+        </span>
+      }
+    </div>
+  </div>
+
+  <div class="place-content">
+    <a href="javascript:void(0);" class="avatar avatar-md ms-3 car-avatar-image">
+      <img [src]="item.user_avatar_url" class="rounded-circle" alt="img">
+    </a>
+
+    <div class="d-flex align-items-center justify-content-between mb-1">
+      <div class="d-flex flex-wrap align-items-center">
+        <span class="badge badge-secondary fs-10 fw-medium me-1">{{ item.type_badge }}</span>
+      </div>
+    </div>
+
+    <h5 class="mb-1 text-truncate">
+      <a [routerLink]="item.route">{{ item.title }}</a>
+    </h5>
+
+    <p class="d-flex align-items-center mb-3">
+      <i class="isax isax-location5 me-2"></i>{{ item.location }}
+    </p>
+
+    <div class="mb-3 p-2 border rounded d-flex align-items-center justify-content-between">
+      <div class="pe-4 border-end">
+        <span class="fs-14 d-flex align-items-center text-dark">
+          <i class="isax isax-gas-station me-1"></i>Fuel
+        </span>
+        <p class="text-dark fs-14">{{ item.fuel }}</p>
+      </div>
+
+      <div class="pe-4 border-end">
+        <span class="fs-14 d-flex align-items-center text-dark">
+          <i class="isax isax-kanban me-1"></i>Gear
+        </span>
+        <p class="text-dark fs-14">{{ item.gear }}</p>
+      </div>
+
+      <div>
+        <span class="fs-14 d-flex align-items-center text-dark">
+          <i class="isax isax-routing-2 me-1"></i>Travelled
+        </span>
+        <p class="text-dark fs-14">{{ item.travelled }}</p>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-between border-top pt-3">
+      <div class="d-flex flex-wrap align-items-center me-2">
+        <h5 class="text-primary">
+          ${{ item.price }} <span class="fs-14 text-gray-6 fw-normal">{{ item.price_unit }}</span>
+        </h5>
+      </div>
+
+      <div class="ms-2 d-flex align-items-center">
+        <div class="d-flex align-items-center flex-wrap">
+          <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-1">{{ item.rating }}</span>
+          <p class="fs-14">{{ item.reviews_text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

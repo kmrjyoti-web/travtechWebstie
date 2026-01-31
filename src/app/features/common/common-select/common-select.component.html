@@ -1,0 +1,8 @@
+<select [value]="selectedValue" (change)="onValueChange($event)" class="form-select">
+  <option value="" disabled>{{ placeholder }}</option>
+  @for (option of options; track option) {
+    <option [value]="option.value">
+      {{ option.label }}
+    </option>
+  }
+</select>

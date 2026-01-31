@@ -1,0 +1,33 @@
+{
+  "header": {
+    "titleHtml": "Frequently Asked <span class=\"text-primary  text-decoration-underline\">Questions</span>",
+    "subTitle": "DreamsTour, a tour operator specializing in dream destinations, offers a variety of benefits for travelers."
+  },
+  "items": [
+    {
+      "question": "What types of tours do you offer?",
+      "answerHtml": "<p class=\"mb-0\">We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p><p>Popular destinations include Europe, Africa (e.g., Morocco), </p>",
+      "isOpen": true
+    },
+    {
+      "question": "Are the tours customizable?",
+      "answerHtml": "<p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>",
+      "isOpen": false
+    },
+    {
+      "question": "What safety measures do you follow?",
+      "answerHtml": "<p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>",
+      "isOpen": false
+    },
+    {
+      "question": "How far in advance should I book?",
+      "answerHtml": "<p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>",
+      "isOpen": false
+    },
+    {
+      "question": "What is your cancellation policy?",
+      "answerHtml": "<p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>",
+      "isOpen": false
+    }
+  ]
+}

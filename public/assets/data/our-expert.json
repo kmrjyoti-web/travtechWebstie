@@ -1,0 +1,54 @@
+{
+  "header": {
+    "titlePrefix": "Our",
+    "titleHighlight": "Popular",
+    "titleSuffix": "Experts",
+    "subtitle": "Here are some famous tourist places around the world that are known for their historical significance,natural beauty, or cultural impact:"
+  },
+  "aos": { "name": "fade-up", "duration": 2000 },
+  "viewAll": { "label": "View All Experts", "routeKey": "team" },
+  "items": [
+    {
+      "id": "expert-01",
+      "name": "Damien Martien",
+      "rating": 5.0,
+      "reviewsText": "499 Reviews",
+      "countryText": "Brazil, Rio",
+      "countryFlagUrl": "assets/img/flags/brazil.svg",
+      "imageUrl": "assets/img/expert/expert-01.png",
+      "bgClass": "bg-purple-100",
+      "circleClass": "bg-info",
+      "totalListings": 14,
+      "startsFrom": 452,
+      "currencySymbol": "$"
+    },
+    {
+      "id": "expert-02",
+      "name": "Connie Allen",
+      "rating": 4.9,
+      "reviewsText": "315 Reviews",
+      "countryText": "Tokyo, Japan",
+      "countryFlagUrl": "assets/img/flags/japan.svg",
+      "imageUrl": "assets/img/expert/expert-02.png",
+      "bgClass": "bg-orange-100",
+      "circleClass": "bg-orange",
+      "totalListings": 21,
+      "startsFrom": 689,
+      "currencySymbol": "$"
+    },
+    {
+      "id": "expert-03",
+      "name": "Ida Olsen",
+      "rating": 4.7,
+      "reviewsText": "220 Reviews",
+      "countryText": "Cape Town, South Africa",
+      "countryFlagUrl": "assets/img/flags/africa.svg",
+      "imageUrl": "assets/img/expert/expert-03.png",
+      "bgClass": "bg-pink-100",
+      "circleClass": "bg-pink",
+      "totalListings": 15,
+      "startsFrom": 230,
+      "currencySymbol": "$"
+    }
+  ]
+}

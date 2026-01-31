@@ -1,0 +1,29 @@
+@if (store.vm(); as vm) {
+  <section class="section blog-section pt-0">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-6 col-lg-10 text-center aos" data-aos="fade-up" data-aos-duration="2000">
+          <div class="section-header text-center">
+            <h2 class="mb-2" [innerHTML]="vm.header.titleHtml"></h2>
+            <p class="sub-title">{{ vm.header.subTitle }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        @for (item of vm.items; track item) {
+          <div class="col-lg-4 col-md-6">
+            <app-blog-card [item]="item" [routes]="routes"></app-blog-card>
+          </div>
+        }
+      </div>
+      <div class="text-center view-all aos">
+        <a
+          [routerLink]="routes[vm.viewAll.routeKey]"
+          class="btn btn-dark d-inline-flex align-items-center"
+          >
+          {{ vm.viewAll.label }}<i class="isax isax-arrow-right-3 ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+}

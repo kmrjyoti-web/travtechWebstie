@@ -1,0 +1,32 @@
+<div class="expert-item mb-4">
+    <a href="javascript:void(0);" class="expert-img">
+        <div class="position-relative" [ngClass]="item.bgClass">
+            <img [src]="item.imageUrl" alt="img">
+            <span class="circle-shape" [ngClass]="item.circleClass"></span>
+        </div>
+    </a>
+
+    <div class="expert-content">
+        <div class="d-flex align-items-center mb-1">
+            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">{{ item.ratingBadgeText }}</span>
+            <p>{{ item.reviewsText }}</p>
+        </div>
+
+        <h5 class="mb-1"><a href="javascript:void(0);">{{ item.name }}</a></h5>
+
+        <p class="d-flex align-items-center">
+            <img [src]="item.countryFlagUrl" alt="img" class="me-2">{{ item.countryText }}
+        </p>
+
+        <div class="d-flex border-top mt-3 pt-3">
+            <div class="flex-fill">
+                <p class="mb-1">Total Listings</p>
+                <h6>{{ item.totalListings }}</h6>
+            </div>
+            <div class="flex-fill">
+                <p class="mb-1">Starts From</p>
+                <h6>{{ item.startsFromText }}</h6>
+            </div>
+        </div>
+    </div>
+</div>

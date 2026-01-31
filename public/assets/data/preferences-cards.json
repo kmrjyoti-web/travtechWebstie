@@ -1,0 +1,47 @@
+[
+  {
+    "preference_id": "religious",
+    "title": "Religious",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767922240/spiritual_travtech_zcnz3q.jpg",
+    "count": 25,
+    "count_suffix": "Tours",
+    "route": "/tour/grid/religious",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "adventure-tour",
+    "title": "Adventure Tour",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767922713/AdventureTour_qlfh7r.jpg",
+    "count": 47,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "group-tours",
+    "title": "Group Tours",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767922909/GroupTours_yjmdxa.jpg",
+    "count": 38,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "beach-tours",
+    "title": "Beach Tours",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767929575/beach-tours_td9gg4.jpg",
+    "count": 54,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  },
+  {
+    "preference_id": "honeymoon",
+    "title": "Honey Moon",
+    "image_url": "https://res.cloudinary.com/dnke1h9ey/image/upload/c_fill,g_auto,w_482,h_552,f_auto,q_auto/v1767929718/Honey-Moon-tour_e9pa2j.jpg",
+    "count": 22,
+    "count_suffix": "Tours",
+    "route": "/tour/grid",
+    "aos": { "name": "fade-up", "duration": 2000 }
+  }
+]

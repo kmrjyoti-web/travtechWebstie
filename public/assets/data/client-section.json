@@ -1,0 +1,9 @@
+{
+  "title": "Trusted By 40+ Clients Around the Globe",
+  "items": [
+    { "id": "client-01", "imageUrl": "assets/img/clients/client-01.svg", "alt": "client-01" },
+    { "id": "client-02", "imageUrl": "assets/img/clients/client-02.svg", "alt": "client-02" },
+    { "id": "client-03", "imageUrl": "assets/img/clients/client-03.svg", "alt": "client-03" },
+    { "id": "client-04", "imageUrl": "assets/img/clients/client-04.svg", "alt": "client-04" }
+  ]
+}

@@ -1,0 +1,18 @@
+<div class="card benefit-card mb-0 flex-fill aos"
+     [attr.data-aos]="card.aosName"
+     [attr.data-aos-duration]="card.aosDuration">
+
+    <div class="card-body text-center">
+        <div class="benefit-icon mb-2 mx-auto"
+             [ngClass]="[card.iconBgClass, card.iconTextClass]">
+            <i class="isax" [ngClass]="card.icon"></i>
+        </div>
+
+        <h5 class="mb-2">{{ card.title }}</h5>
+        <p class="mb-0">{{ card.description }}</p>
+
+        <span class="icon-view" [ngClass]="card.shadowIconTextClass">
+      <i class="isax" [ngClass]="card.icon"></i>
+    </span>
+    </div>
+</div>

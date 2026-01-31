@@ -1,0 +1,18 @@
+<section class="section client-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 text-center aos" data-aos="fade-up" data-aos-duration="2000">
+        <h6 class="fs-16 fw-medium mb-4">{{ store.vm()?.title }}</h6>
+      </div>
+    </div>
+
+    <div class="client-slider row">
+      @for (it of (store.vm()?.items ?? []); track trackById($index, it)) {
+        <div class="col-lg-3"
+          >
+          <app-client-section-card [item]="it"></app-client-section-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>

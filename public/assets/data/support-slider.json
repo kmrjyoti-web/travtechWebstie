@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "title": "Personalized Itineraries" },
+    { "title": "Comprehensive Planning" },
+    { "title": "Expert Guidance" },
+    { "title": "Local Experience" },
+    { "title": "Customer Support" },
+    { "title": "Sustainability Efforts" },
+    { "title": "Multiple Regions" }
+  ],
+  "direction": "left",
+  "speed": "slow",
+  "bgClass": "bg-primary"
+}

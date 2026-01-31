@@ -1,0 +1,153 @@
+@if (!isHiddenByBase()) {
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1">
+          @for (col of (store.data()?.columns ?? []); track col) {
+            <div class="col">
+              <app-footer-column-card [column]="col" [routes]="routes"></app-footer-column-card>
+            </div>
+          }
+        </div>
+        <!-- Non-RTL footer wrap -->
+        @if (!isRtl()) {
+          <div class="footer-wrap bg-white">
+            <div class="row align-items-center">
+              <div class="col-lg-6 col-xl-3 col-xxl-3">
+                <div class="mb-3 text-center text-xl-start">
+                  <a [routerLink]="homeRoute()" class="d-block footer-logo-light">
+                    <img [src]="store.data()?.brand?.logoLight" alt="logo">
+                  </a>
+                  <a [routerLink]="homeRoute()" class="footer-logo-dark">
+                    <img [src]="store.data()?.brand?.logoDark" alt="logo">
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-6 col-xl-4 col-xxl-4">
+                <div class="d-flex align-items-center justify-content-center flex-wrap">
+                  <h6 class="fs-14 fw-medium me-2 mb-2">{{ store.data()?.stores?.label }}</h6>
+                  @for (s of (store.data()?.stores?.items ?? []); track s) {
+                    <a
+                      [href]="s.href"
+                      class="d-block mb-3 me-2">
+                      <img [src]="s.img" alt="logo">
+                    </a>
+                  }
+                </div>
+              </div>
+              <div class="col-lg-12 col-xl-5 col-xxl-5">
+                <div class="d-sm-flex align-items-center justify-content-center justify-content-xl-end">
+                  <div class="d-flex align-items-center justify-content-center justify-content-sm-start me-0 pe-0 me-sm-3 pe-sm-3 border-end mb-3">
+                    <span [class]="store.data()?.contact?.support?.iconWrapClass">
+                      <i [class]="store.data()?.contact?.support?.iconClass"></i>
+                    </span>
+                    <div class="ms-2">
+                      <p class="mb-1">{{ store.data()?.contact?.support?.title }}</p>
+                      <p class="fw-medium text-dark">{{ store.data()?.contact?.support?.value }}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center justify-content-sm-start mb-3">
+                    <span [class]="store.data()?.contact?.email?.iconWrapClass">
+                      <i [class]="store.data()?.contact?.email?.iconClass"></i>
+                    </span>
+                    <div class="ms-2">
+                      <p class="mb-1">{{ store.data()?.contact?.email?.title }}</p>
+                      <p class="fw-medium text-dark">{{ store.data()?.contact?.email?.value }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+        <!-- RTL footer wrap (same as your original spacing) -->
+        @if (isRtl()) {
+          <div class="footer-wrap bg-white">
+            <div class="row align-items-center">
+              <div class="col-lg-6 col-xl-3 col-xxl-3">
+                <div class="mb-3 text-center text-xl-start">
+                  <a [routerLink]="homeRoute()" class="d-block footer-logo-light">
+                    <img [src]="store.data()?.brand?.logoLight" alt="logo">
+                  </a>
+                  <a [routerLink]="homeRoute()" class="footer-logo-dark">
+                    <img [src]="store.data()?.brand?.logoDark" alt="logo">
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-6 col-xl-4 col-xxl-4">
+                <div class="d-flex align-items-center justify-content-center flex-wrap">
+                  <h6 class="fs-14 fw-medium ms-2 mb-2">{{ store.data()?.stores?.label }}</h6>
+                  @for (s of (store.data()?.stores?.items ?? []); track s) {
+                    <a
+                      [href]="s.href"
+                      class="d-block mb-3 ms-2">
+                      <img [src]="s.img" alt="logo">
+                    </a>
+                  }
+                </div>
+              </div>
+              <div class="col-lg-12 col-xl-5 col-xxl-5">
+                <div class="d-sm-flex align-items-center justify-content-center justify-content-xl-end">
+                  <div class="d-flex align-items-center justify-content-center justify-content-sm-start me-0 ps-0 ms-sm-3 pe-sm-3 border-end mb-3">
+                    <span [class]="store.data()?.contact?.support?.iconWrapClass">
+                      <i [class]="store.data()?.contact?.support?.iconClass"></i>
+                    </span>
+                    <div class="me-2">
+                      <p class="mb-1">{{ store.data()?.contact?.support?.title }}</p>
+                      <p class="fw-medium text-dark">{{ store.data()?.contact?.support?.value }}</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-center justify-content-sm-start mb-3">
+                    <span [class]="store.data()?.contact?.email?.iconWrapClass">
+                      <i [class]="store.data()?.contact?.email?.iconClass"></i>
+                    </span>
+                    <div class="me-2">
+                      <p class="mb-1">{{ store.data()?.contact?.email?.title }}</p>
+                      <p class="fw-medium text-dark">{{ store.data()?.contact?.email?.value }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+        <div class="footer-img">
+          <img [src]="store.data()?.footerArt?.img" class="img-fluid" alt="img">
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="d-flex align-items-center justify-content-between flex-wrap">
+              <p class="fs-14">
+                <span [innerHTML]="store.data()?.bottom?.copyrightHtml"></span>
+                <a [href]="store.data()?.bottom?.brandHref" class="text-primary fw-medium">{{ store.data()?.bottom?.brandName }}</a>
+              </p>
+              <div class="d-flex align-items-center">
+                <ul class="social-icon">
+                  @for (s of (store.data()?.bottom?.social ?? []); track s) {
+                    <li>
+                      <a [href]="s.href"><i [class]="s.iconClass"></i></a>
+                    </li>
+                  }
+                </ul>
+              </div>
+              <ul class="card-links">
+                @for (c of (store.data()?.bottom?.cards ?? []); track c) {
+                  <li>
+                    <a [href]="c.href">
+                      <img [src]="c.img" alt="img">
+                    </a>
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+}

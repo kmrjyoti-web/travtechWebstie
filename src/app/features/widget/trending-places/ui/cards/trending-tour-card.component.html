@@ -1,0 +1,87 @@
+<div class="place-item mb-4 flex-fill">
+  <div class="place-img">
+    <div class="slide-images">
+      <a [routerLink]="item.route">
+        <img [src]="item.image_url" class="img-fluid" alt="img">
+      </a>
+    </div>
+
+    <div class="fav-item">
+      <a href="javascript:void(0);"
+        class="fav-icon"
+        [ngClass]="{ selected: favSelected() }"
+        (click)="onFav($event)">
+        <i class="isax isax-heart5"></i>
+      </a>
+
+      @if (item.badge_text) {
+        <span class="badge d-inline-flex align-items-center"
+          [ngClass]="item.badge_class"
+          >
+          <i class="isax isax-ranking me-1"></i>{{ item.badge_text }}
+        </span>
+      }
+    </div>
+  </div>
+
+  <div class="place-content">
+    <div class="d-flex align-items-center justify-content-between mb-1">
+      <div class="d-flex flex-wrap align-items-center">
+        <span class="me-1"><i class="ti ti-receipt text-primary"></i></span>
+        <p class="fs-14 text-gray-9">{{ item.category }}</p>
+      </div>
+
+      <span class="d-inline-block border vertical-splits">
+        <span class="bg-light text-light d-flex align-items-center justify-content-center"></span>
+      </span>
+
+      <div class="d-flex align-items-center flex-wrap">
+        <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-1">{{ item.rating }}</span>
+        <p class="fs-14">{{ item.reviews_text }}</p>
+      </div>
+    </div>
+
+    <h5 class="mb-1 text-truncate">
+      <a [routerLink]="item.route">{{ item.title }}</a>
+    </h5>
+
+    <p class="d-flex align-items-center mb-3">
+      <i class="isax isax-location5 me-2"></i>{{ item.location }}
+    </p>
+
+    <div class="mb-3">
+      <h6 class="d-flex align-items-center text-gray-6 fs-14 fw-normal">
+        Starts From
+        <span class="ms-1 fs-18 fw-semibold text-primary">${{ item.price_current }}</span>
+
+        @if (item.price_old) {
+          <span class="ms-1 fs-18 fw-semibold text-gray-3 text-decoration-line-through"
+            >
+            ${{ item.price_old }}
+          </span>
+        }
+      </h6>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-between border-top pt-3">
+      <div class="d-flex flex-wrap align-items-center me-2">
+        <span class="me-1"><i class="isax isax-calendar-tick text-gray-6"></i></span>
+        <p class="fs-14 text-gray-9">{{ item.duration_text }}</p>
+      </div>
+
+      <span class="d-inline-block border vertical-splits">
+        <span class="bg-light text-light d-flex align-items-center justify-content-center"></span>
+      </span>
+
+      <div class="ms-2 d-flex align-items-center">
+        <p class="fs-14 text-gray-9 mb-0 text-truncate d-flex align-items-center">
+          <i class="isax isax-profile-2user me-1"></i>{{ item.guests_text }}
+        </p>
+
+        <a href="javascript:void(0);" class="avatar avatar-sm ms-3">
+          <img [src]="item.user_avatar_url" class="rounded-circle" alt="img">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

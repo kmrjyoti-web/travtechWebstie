@@ -1,0 +1,19 @@
+<div class="categories-card aos"
+     [attr.data-aos]="card.aosName"
+     [attr.data-aos-duration]="card.aosDuration">
+
+    <a [routerLink]="link">
+        <img [src]="card.imageUrl" alt="Img">
+    </a>
+
+    <div class="cat-content d-flex align-items-center justify-content-between">
+        <div>
+            <h5 class="text-white mb-1">{{ card.title }}</h5>
+            <span class="text-white">{{ card.countText }}</span>
+        </div>
+
+        <a [routerLink]="link" class="loc-view-bottom">
+            <i class="isax isax-arrow-right-1"></i>
+        </a>
+    </div>
+</div>

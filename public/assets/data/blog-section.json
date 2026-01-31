@@ -1,0 +1,39 @@
+{
+  "header": {
+    "titleHtml": "Recent <span class=\"text-primary text-decoration-underline\">Articles</span>",
+    "subTitle": "DreamsTour offers various blog resources that cater to travel enthusiasts, with a focus on adventure, gear reviews, and travel tips."
+  },
+  "viewAll": {
+    "label": "View All Articles",
+    "routeKey": "blogGrid"
+  },
+  "items": [
+    {
+      "image": "assets/img/blog/blog-01.jpg",
+      "badge": "Travel",
+      "authorName": "Bryan Bradfield",
+      "authorAvatar": "assets/img/users/user-01.jpg",
+      "dateText": "14 May 2025",
+      "title": "Top 10 Hidden Gems places in Central Europe in 2025",
+      "routeKey": "blogDetails"
+    },
+    {
+      "image": "assets/img/blog/blog-02.jpg",
+      "badge": "Guide",
+      "authorName": "Michell West",
+      "authorAvatar": "assets/img/users/user-02.jpg",
+      "dateText": "12 May 2025",
+      "title": "Exploring the World: Your Ultimate Dream Tour Itinerary",
+      "routeKey": "blogDetails"
+    },
+    {
+      "image": "assets/img/blog/blog-03.jpg",
+      "badge": "Rental",
+      "authorName": "Patricia Hasbro",
+      "authorAvatar": "assets/img/users/user-03.jpg",
+      "dateText": "14 May 2025",
+      "title": "New York City, USA - The City That  Never Sleeps",
+      "routeKey": "blogDetails"
+    }
+  ]
+}

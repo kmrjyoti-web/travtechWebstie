@@ -1,0 +1,83 @@
+<div class="card-header">
+    <ul class="nav">
+        @for (t of tabs; track t.id) {
+            <li>
+                <a
+                        href="javascript:void(0);"
+                        class="nav-link"
+                        [class.active]="t.id === activeTabId()"
+                        (click)="setActive(t.id)"
+                >
+                    @if (t.iconClass) { <i class="{{ t.iconClass }} me-2"></i> }
+                    {{ t.label }}
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="card-body">
+    @if (activeTab() && form()) {
+        <form [formGroup]="form()!" (ngSubmit)="onSubmit()">
+            <div class="row g-3 align-items-end">
+
+                @for (f of activeTab()!.fields; track f.key) {
+                    @if (isFieldVisible(f)) {
+                        <div class="col-12 col-md-6 col-lg-3">
+
+                            <label class="form-label fs-14 text-default mb-1">{{ f.label }}</label>
+
+                            @switch (f.type) {
+                                @case ('text') {
+                                    <input class="form-control" type="text" [placeholder]="f.placeholder" [formControlName]="f.key" />
+                                }
+
+                                @case ('date') {
+                                    <input class="form-control" type="date" [formControlName]="f.key" />
+                                }
+
+                                @case ('time') {
+                                    <input class="form-control" type="time" [formControlName]="f.key" />
+                                }
+
+                                @case ('select') {
+                                    <select class="form-select" [formControlName]="f.key">
+                                        @for (o of (f.options ?? []); track o.value) {
+                                            <option [ngValue]="o.value">{{ o.label }}</option>
+                                        }
+                                    </select>
+                                }
+
+                                @case ('radio') {
+                                    <div class="d-flex flex-wrap gap-3">
+                                        @for (o of (f.options ?? []); track o.value) {
+                                            <label class="form-check d-flex align-items-center gap-2 mb-0">
+                                                <input class="form-check-input mt-0" type="radio" [value]="o.value" [formControlName]="f.key" />
+                                                <span class="fs-14">{{ o.label }}</span>
+                                            </label>
+                                        }
+                                    </div>
+                                }
+
+                                @case ('counter') {
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button type="button" class="btn btn-light btn-sm" (click)="dec(f.key, f.min ?? 0)">-</button>
+                                        <input class="form-control text-center" style="max-width: 80px" type="number" [formControlName]="f.key" />
+                                        <button type="button" class="btn btn-light btn-sm" (click)="inc(f.key, f.max ?? 999)">+</button>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                }
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <button class="btn btn-primary w-100" type="submit">
+                        {{ activeTab()!.submitLabel }}
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    }
+</div>

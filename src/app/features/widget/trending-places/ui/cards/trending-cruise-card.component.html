@@ -1,0 +1,94 @@
+<div class="place-item mb-4 flex-fill">
+  <div class="place-img">
+    <div class="slide-images">
+      <a [routerLink]="item.route">
+        <img [src]="item.image_url" class="img-fluid" alt="img">
+      </a>
+    </div>
+
+    <div class="fav-item">
+      <a href="javascript:void(0);"
+        class="fav-icon"
+        [ngClass]="{ selected: favSelected() }"
+        (click)="onFav($event)">
+        <i class="isax isax-heart5"></i>
+      </a>
+
+      @if (item.badge_text) {
+        <span class="badge d-inline-flex align-items-center"
+          [ngClass]="item.badge_class"
+          >
+          <i class="isax isax-ranking me-1"></i>{{ item.badge_text }}
+        </span>
+      }
+    </div>
+  </div>
+
+  <div class="place-content">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden me-2">
+        <span class="avatar avatar-md flex-shrink-0 me-2">
+          <img [src]="item.user_avatar_url" class="rounded-circle" alt="img">
+        </span>
+        <p class="fs-14 text-truncate">{{ item.user_name }}</p>
+      </a>
+
+      <div class="d-flex align-items-center">
+        <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">{{ item.rating }}</span>
+        <p class="fs-14 text-truncate">{{ item.rating_count_text }}</p>
+      </div>
+    </div>
+
+    <h5 class="mb-1 text-truncate">
+      <a [routerLink]="item.route">{{ item.title }}</a>
+    </h5>
+
+    <p class="d-flex align-items-center mb-3">
+      <i class="isax isax-location5 me-2"></i>{{ item.location }}
+    </p>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <p class="mb-1">
+          <i class="isax isax-calendar-2 text-gray-6 me-1"></i>
+          Year : <span class="text-dark fw-medium">{{ item.year }}</span>
+        </p>
+        <p>
+          <i class="isax isax-user me-1"></i>
+          Guests : <span class="text-dark fw-medium">{{ item.guests }}</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="mb-1">
+          <i class="isax isax-fatrows text-gray-6 me-1"></i>
+          Width : <span class="text-dark fw-medium">{{ item.width }}</span>
+        </p>
+        <p>
+          <i class="isax isax-flash-1 me-1"></i>
+          Speed : <span class="text-dark fw-medium">{{ item.speed }}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-between border-top pt-3">
+      <h6 class="d-flex align-items-center">
+        @for (f of (item.facilities || []); track f) {
+          <i class="isax ms-2 me-2" [ngClass]="f"></i>
+        }
+
+        @if (item.facilities_more) {
+          <a href="javascript:void(0);"
+            class="fs-14 fw-normal text-default d-inline-block"
+            >
+            {{ item.facilities_more }}
+          </a>
+        }
+      </h6>
+
+      <h5 class="text-primary text-nowrap me-2">
+        ${{ item.price }} <span class="fs-14 fw-normal text-default">{{ item.price_unit }}</span>
+      </h5>
+    </div>
+  </div>
+</div>

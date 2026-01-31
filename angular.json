@@ -1,0 +1,242 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "template": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/template",
+            "polyfills": [
+                            "zone.js"
+                        ],
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+                        "server": "src/main.server.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": [
+                  "mixed-decls",
+                  "color-functions",
+                  "global-builtin",
+                  "import"
+                ]
+              }
+            },
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
+              "node_modules/aos/dist/aos.css",
+
+              "src/assets/fontawesome/css/fontawesome.min.css",
+              "src/assets/fontawesome/css/all.min.css",
+              "src/assets/css/iconsax.css",
+              "src/assets/icons/tabler-icons/tabler-icons.css",
+              "src/assets/css/meanmenu.css",
+
+              "src/custom-theme.scss",
+              "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "serviceWorker": "ngsw-config.json"
+          },
+            "configurations": {
+            "production": {
+                "optimization": {
+                  "scripts": true,
+                  "styles": true,
+                  "fonts": false
+                },
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": { 
+              "buildTarget": "template:build:production"
+            },
+            "development": {
+              "buildTarget": "template:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "template:build:development",
+              "serverTarget": "template:build:development"
+            },
+            "production": {
+              "browserTarget": "template:build:production",
+              "serverTarget": "template:build:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/",
+              "/index",
+              "/index-2",
+              "/index-3",
+              "/index-4",
+              "/index-5",
+              "/index-6",
+              "/login",
+              "/register",
+              "/forgot-password",
+              "/change-password",
+              "/coming-soon",
+              "/under-maintenance",
+              "/error-404",
+              "/error-500",
+              "/flight/flight-list",
+              "/flight/flight-grid",
+              "/flight/flight-details",
+              "/flight/flight-booking-confirmation",
+              "/flight/add-flight",
+              "/flight/flight-booking",
+              "/flight/edit-flight",
+              "/hotel/hotel-map",
+              "/hotel/hotel-list",
+              "/hotel/hotel-grid",
+              "/hotel/hotel-details",
+              "/hotel/hotel-booking",
+              "/hotel/add-hotel",
+              "/hotel/booking-confirmation",
+              "/hotel/edit-hotel",
+              "/car/car-list",
+              "/car/car-grid",
+              "/car/car-details",
+              "/car/car-map",
+              "/car/car-booking-confirmation",
+              "/car/add-car",
+              "/car/car-booking",
+              "/car/edit-car",
+              "/cruise/cruise-list",
+              "/cruise/cruise-grid",
+              "/cruise/cruise-details",
+              "/cruise/cruise-map",
+              "/cruise/cruise-booking-confirmation",
+              "/cruise/add-cruise",
+              "/cruise/cruise-booking",
+              "/cruise/edit-cruise",
+              "/tour/tour-list",
+              "/tour/tour-grid",
+              "/tour/tour-details",
+              "/tour/tour-map",
+              "/tour/tour-booking-confirmation",
+              "/tour/add-tour",
+              "/tour/tour-booking",
+              "/tour/edit-tour",
+              "/pages/about-us",
+              "/pages/gallery",
+              "/pages/testimonial",
+              "/pages/faq",
+              "/pages/pricing-plan",
+              "/pages/team",
+              "/pages/invoices",
+              "/pages/blog-grid",
+              "/pages/blog-list",
+              "/pages/blog-details",
+              "/pages/contact-us",
+              "/pages/destination",
+              "/pages/terms-conditions",
+              "/pages/privacy-policy",
+              "/pages/become-an-expert",
+              "/pages/index-rtl"
+            ]
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": 
+            [
+              "zone.js",
+              "zone.js/testing",
+              "@angular/localize/init"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "standalone": true,
+      "type": "component"
+    }
+  },
+  "cli": {
+    "analytics": "eb1527b4-fac2-49d9-b484-150d131ba2cf"
+  }
+}

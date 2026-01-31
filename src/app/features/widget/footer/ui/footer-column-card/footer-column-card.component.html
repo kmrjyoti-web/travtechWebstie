@@ -1,0 +1,16 @@
+<div class="footer-widget">
+  <h5>{{ column.title }}</h5>
+
+  <ul class="footer-menu">
+    @for (link of column.links; track link) {
+      <li>
+        <!-- if routeKey exists and resolves -> routerLink -->
+        @if (resolveRoute(link); as r) {
+          <a [routerLink]="r">{{ link.label }}</a>
+        } @else {
+          <a [href]="link.href ?? 'javascript:void(0);'">{{ link.label }}</a>
+        }
+      </li>
+    }
+  </ul>
+</div>

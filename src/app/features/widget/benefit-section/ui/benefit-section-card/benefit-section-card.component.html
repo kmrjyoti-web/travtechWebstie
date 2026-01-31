@@ -1,0 +1,23 @@
+<div class="{{ item.bgClass }} mb-4 aos"
+     [attr.data-aos]="item.aosName"
+     [attr.data-aos-duration]="item.aosDuration">
+
+    <div class="card border-0 mb-0">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+        <span class="work-icon d-flex" [ngClass]="item.iconColorClass">
+          <i class="isax" [ngClass]="item.iconClass"></i>
+        </span>
+
+                <span class="work-avatar">
+          {{ item.step }}
+        </span>
+            </div>
+
+            <div>
+                <h5 class="mb-2 text-truncate">{{ item.title }}</h5>
+                <p class="text-truncate line-clamb-3">{{ item.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="counter-item mb-4">
+    <h6 class="mb-1 d-flex align-items-center justify-content-center" [ngClass]="item.textClass">
+        <i class="{{ item.icon }} me-2"></i>{{ item.title }}
+    </h6>
+
+    <h3 class="display-6">
+        <span class="counter" [countUp]="item.value" [options]="{ enableScrollSpy: true }">{{ item.value }}</span>{{ item.suffix }}
+    </h3>
+</div>

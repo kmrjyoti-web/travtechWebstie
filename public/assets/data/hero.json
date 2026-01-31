@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "background_url": "https://dreamstour.dreamstechnologies.com/angular/media/banner-01-QE4OMNVQ.jpg",
+    "title": "Get Closer to the Dream:",
+    "title_highlight": "Your Tour",
+    "subtitle": "Your ultimate destination for all things help you celebrate & remember tour experience.",
+    "min_height_px": 620,
+    "parallax": true,
+
+    "panel": {
+      "enabled": false,
+      "reserve_space_when_hidden": true,
+      "reserved_height_px": 260,
+
+      "tabs": [
+        {
+          "id": "flights",
+          "label": "Flights",
+          "icon_class": "isax isax-airplane5",
+          "enabled": true,
+          "submit_label": "Search",
+          "fields": [
+            { "key": "tripType", "type": "radio", "label": "Trip", "default": "oneway",
+              "options": [
+                { "label": "Oneway", "value": "oneway" },
+                { "label": "Round Trip", "value": "roundtrip" },
+                { "label": "Multi Trip", "value": "multiway" }
+              ]
+            },
+            { "key": "from", "type": "text", "label": "From", "placeholder": "City / Airport", "default": "Newyork" },
+            { "key": "to", "type": "text", "label": "To", "placeholder": "City / Airport", "default": "Las Vegas" },
+            { "key": "departDate", "type": "date", "label": "Departure" },
+            { "key": "returnDate", "type": "date", "label": "Return", "show_if": { "field": "tripType", "equals": "roundtrip" } },
+            { "key": "travellers", "type": "counter", "label": "Travellers", "default": 1, "min": 1, "max": 20 },
+            { "key": "cabin", "type": "select", "label": "Cabin", "default": "Economy",
+              "options": [
+                { "label": "Economy", "value": "Economy" },
+                { "label": "Premium Economy", "value": "Premium Economy" },
+                { "label": "Business", "value": "Business" },
+                { "label": "First Class", "value": "First Class" }
+              ]
+            }
+          ]
+        },
+
+        {
+          "id": "hotels",
+          "label": "Hotels",
+          "icon_class": "isax isax-buildings5",
+          "enabled": true,
+          "submit_label": "Search",
+          "fields": [
+            { "key": "location", "type": "text", "label": "City / Property / Location", "default": "Newyork" },
+            { "key": "checkIn", "type": "date", "label": "Check In" },
+            { "key": "checkOut", "type": "date", "label": "Check Out" },
+            { "key": "rooms", "type": "counter", "label": "Rooms", "default": 1, "min": 1, "max": 10 },
+            { "key": "guests", "type": "counter", "label": "Guests", "default": 2, "min": 1, "max": 20 }
+          ]
+        },
+
+        { "id": "cars", "label": "Cars", "icon_class": "isax isax-car5", "enabled": false, "fields": [] },
+        { "id": "cruise", "label": "Cruise", "icon_class": "isax isax-ship5", "enabled": false, "fields": [] },
+        { "id": "tour", "label": "Tour", "icon_class": "isax isax-camera5", "enabled": true, "fields": [
+          { "key": "where", "type": "text", "label": "Where would you like to go?", "default": "Newyork" },
+          { "key": "startDate", "type": "date", "label": "Start Date" },
+          { "key": "endDate", "type": "date", "label": "End Date" },
+          { "key": "travellers", "type": "counter", "label": "Travellers", "default": 2, "min": 1, "max": 20 }
+        ]}
+      ]
+    }
+  }
+}

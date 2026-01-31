@@ -1,0 +1,305 @@
+.img-fallback-animated {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .fallback-title {
+    color: #1f2937;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    z-index: 10;
+    text-transform: capitalize;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    position: relative;
+  }
+
+  .animated-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon-animate {
+      position: absolute;
+      opacity: 0; // Start invisible
+      font-size: 80px; // Large background icon
+      font-family: 'iconsax' !important;
+      line-height: 1;
+
+      // Animation: Fade in -> Wait -> Fade out
+      animation: iconSwitch 20s linear infinite;
+    }
+
+    // Stagger animations to create a loop with distinct colors
+    .icon-1 {
+      animation-delay: 0s;
+      color: #0d6efd;
+    }
+
+    // Airplane (Blue)
+    .icon-2 {
+      animation-delay: 4s;
+      color: #fd7e14;
+    }
+
+    // Bag (Orange)
+    .icon-3 {
+      animation-delay: 8s;
+      color: #198754;
+    }
+
+    // Map (Green)
+    .icon-4 {
+      animation-delay: 12s;
+      color: #6f42c1;
+    }
+
+    // Ticket (Purple)
+    .icon-5 {
+      animation-delay: 16s;
+      color: #0dcaf0;
+    }
+
+    // Global (Info/Cyan)
+  }
+}
+
+@keyframes iconSwitch {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  5% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  // Fade in quickly, keep low opacity for background feel
+  20% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  // Stay visible
+  25% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+  // Fade out
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+// Breadcrumb Animations
+.breadcrumb-bar {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+
+
+  .breadcrumb-animations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; // Behind text
+    pointer-events: none;
+
+    i {
+      position: absolute;
+      opacity: 0;
+    }
+
+    // Flight Animation
+    .flight-icon {
+      font-size: 80px; // Increased size
+      color: rgba(13, 110, 253, 0.6); // More visible
+      top: 60%;
+      left: -100px;
+      animation: flyAcross 15s linear infinite;
+    }
+
+    // Train Animation
+    .train-icon {
+      font-size: 70px; // Increased size
+      color: rgba(253, 126, 20, 0.6); // More visible
+      bottom: 10px;
+      right: -100px;
+      animation: driveAcross 20s linear infinite;
+    }
+
+    // Floating Monuments & Food
+    .float-icon {
+      font-size: 50px; // Increased size
+      animation: floatFade 8s ease-in-out infinite;
+
+      &.icon-1 {
+        top: 15%;
+        left: 5%;
+        color: rgba(25, 135, 84, 0.5);
+        animation-delay: 0s;
+      }
+
+      // Building (Green)
+      &.icon-2 {
+        top: 75%;
+        left: 15%;
+        color: rgba(220, 53, 69, 0.5);
+        animation-delay: 2s;
+      }
+
+      // Coffee (Red)
+      &.icon-3 {
+        top: 25%;
+        right: 10%;
+        color: rgba(111, 66, 193, 0.5);
+        animation-delay: 4s;
+      }
+
+      // Map (Purple)
+      &.icon-4 {
+        top: 65%;
+        right: 20%;
+        color: rgba(13, 202, 240, 0.5);
+        animation-delay: 6s;
+      }
+
+      // Global (Cyan)
+
+      // New Icons
+      &.icon-5 {
+        top: 10%;
+        right: 40%;
+        color: rgba(255, 193, 7, 0.6);
+        animation-delay: 1s;
+      }
+
+      // Camera (Yellow)
+      &.icon-6 {
+        top: 80%;
+        right: 5%;
+        color: rgba(253, 126, 20, 0.6);
+        animation-delay: 3s;
+      }
+
+      // Sun (Orange)
+      &.icon-7 {
+        top: 40%;
+        left: 30%;
+        color: rgba(32, 201, 151, 0.5);
+        animation-delay: 5s;
+      }
+
+      // Ticket (Teal)
+      &.icon-8 {
+        bottom: 20%;
+        left: 45%;
+        color: rgba(102, 16, 242, 0.5);
+        animation-delay: 7s;
+      }
+
+      // Car (Indigo)
+    }
+  }
+
+  // Ensure content is above animations
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    left: -50px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  40% {
+    transform: translate(40vw, -100px) rotate(-20deg); // Take off
+  }
+
+  50% {
+    transform: translate(50vw, -100px) rotate(0deg); // Level
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(100vw, -50px) rotate(0deg);
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes driveAcross {
+  0% {
+    right: -50px;
+    transform: scaleX(-1); // Face left
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    right: 105%;
+    transform: scaleX(-1);
+    opacity: 0;
+  }
+}
+
+@keyframes floatFade {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8; // Max opacity
+  }
+}

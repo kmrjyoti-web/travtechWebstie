@@ -1,0 +1,143 @@
+<section class="section place-section bg-white">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-10 text-center aos"
+        [attr.data-aos]="store.header()?.aosName || 'fade-up'"
+        [attr.data-aos-duration]="store.header()?.aosDuration || 2000">
+
+        <div class="section-header mb-4 text-center">
+          <h2 class="mb-2">
+            {{ store.header()?.titlePrefix }}
+            <span class="text-primary text-decoration-underline">{{ store.header()?.titleHighlight }}</span>
+            {{ store.header()?.titleSuffix }}
+          </h2>
+          <p class="sub-title">{{ store.header()?.subtitle }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="place-nav">
+      <ul class="nav justify-content-center">
+        @for (t of store.tabs(); track trackById($index, t)) {
+          <li>
+            <a href="javascript:void(0);"
+              class="nav-link"
+              [class.active]="store.activeTab() === t.key"
+              (click)="onTabClick(t.key)">
+              {{ t.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="tab-content">
+
+      <!-- Hotels List -->
+      <div class="tab-pane fade" id="Hotels-list"
+        [class.active]="store.activeTab() === 'hotel'"
+        [class.show]="store.activeTab() === 'hotel'">
+        @if (store.activeTab() === 'hotel') {
+          <div class="place-slider nav-center row">
+            @for (it of (store.vm()?.hotel || []); track trackById($index, it)) {
+              <div class="col-lg-4">
+                <app-trending-hotel-card
+                  [item]="it"
+                  [isFav]="store.isFav()"
+                  [toggleFav]="store.toggleFav">
+                </app-trending-hotel-card>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Flight List -->
+      <div class="tab-pane fade" id="flight-list"
+        [class.active]="store.activeTab() === 'flight'"
+        [class.show]="store.activeTab() === 'flight'">
+        @if (store.activeTab() === 'flight') {
+          <div class="row place-slider nav-center">
+            @for (it of (store.vm()?.flight || []); track trackById($index, it)) {
+              <div class="col-lg-4">
+                <app-trending-flight-card
+                  [item]="it"
+                  [isFav]="store.isFav()"
+                  [toggleFav]="store.toggleFav">
+                </app-trending-flight-card>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Cars List -->
+      <div class="tab-pane fade" id="Cars-list"
+        [class.active]="store.activeTab() === 'car'"
+        [class.show]="store.activeTab() === 'car'">
+        @if (store.activeTab() === 'car') {
+          <div class="row place-slider nav-center">
+            @for (it of (store.vm()?.car || []); track trackById($index, it)) {
+              <div class="col-lg-4">
+                <app-trending-car-card
+                  [item]="it"
+                  [isFav]="store.isFav()"
+                  [toggleFav]="store.toggleFav">
+                </app-trending-car-card>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Cruise List -->
+      <div class="tab-pane fade" id="Cruise-list"
+        [class.active]="store.activeTab() === 'cruise'"
+        [class.show]="store.activeTab() === 'cruise'">
+        @if (store.activeTab() === 'cruise') {
+          <div class="row place-slider nav-center">
+            @for (it of (store.vm()?.cruise || []); track trackById($index, it)) {
+              <div class="col-lg-4">
+                <app-trending-cruise-card
+                  [item]="it"
+                  [isFav]="store.isFav()"
+                  [toggleFav]="store.toggleFav">
+                </app-trending-cruise-card>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Tour List -->
+      <div class="tab-pane fade" id="Tour-list"
+        [class.active]="store.activeTab() === 'tour'"
+        [class.show]="store.activeTab() === 'tour'">
+        @if (store.activeTab() === 'tour') {
+          <div class="row place-slider nav-center">
+            @for (it of (store.vm()?.tour || []); track trackById($index, it)) {
+              <div class="col-lg-4">
+                <app-trending-tour-card
+                  [item]="it"
+                  [isFav]="store.isFav()"
+                  [toggleFav]="store.toggleFav">
+                </app-trending-tour-card>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+    </div>
+
+    <div class="text-center view-all aos">
+      <a [routerLink]="store.header()?.viewAllRoute || routes.hotelGrid"
+        class="btn btn-dark d-inline-flex align-items-center">
+        {{ store.header()?.viewAllText || 'View All Places' }}
+        <i class="isax isax-arrow-right-3 ms-2"></i>
+      </a>
+    </div>
+
+  </div>
+</section>

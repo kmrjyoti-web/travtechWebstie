@@ -1,0 +1,71 @@
+<div class="place-item mb-4">
+  <div class="place-img">
+    <div class="img-slider image-slide nav-center">
+      <div class="slide-images">
+        <a [routerLink]="item.route">
+          <img [src]="item.image_url" class="img-fluid" alt="img">
+        </a>
+      </div>
+    </div>
+
+    <div class="fav-item">
+      @if (item.badge_text) {
+        <span class="badge d-inline-flex align-items-center"
+          [ngClass]="item.badge_class"
+          >
+          <i class="isax"
+          [ngClass]="item.badge_text === 'Hot' ? 'isax-tag me-1' : 'isax-ranking me-1'"></i>
+          {{ item.badge_text }}
+        </span>
+      }
+
+      <a href="javascript:void(0);" class="fav-icon"
+        [ngClass]="{ selected: favSelected() }"
+        (click)="onFav($event)">
+        <i class="isax isax-heart5"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="place-content">
+    <div class="d-flex align-items-center mb-1">
+      <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">{{ item.rating }}</span>
+      <p class="fs-14">{{ item.reviews_text }}</p>
+    </div>
+
+    <h5 class="mb-1"><a [routerLink]="item.route">{{ item.title }}</a></h5>
+
+    <p class="d-flex align-items-center mb-2">
+      <i class="isax isax-location5 me-2"></i>{{ item.location }}
+    </p>
+
+    @if (item.facilities?.length) {
+      <div class="border-top pt-2 mb-2">
+        <h6 class="d-flex align-items-center">
+          Facillities :
+          @for (f of item.facilities; track f) {
+            <i class="isax ms-2 me-2 text-primary" [ngClass]="f"></i>
+          }
+          @if (item.facilities_more) {
+            <a href="javascript:void(0);" class="fs-14 fw-normal text-default d-inline-block">
+              {{ item.facilities_more }}
+            </a>
+          }
+        </h6>
+      </div>
+    }
+
+    <div class="d-flex align-items-center justify-content-between border-top pt-3">
+      <h5 class="text-primary">
+        ${{ item.price }} <span class="fs-14 fw-normal text-default">{{ item.price_unit }}</span>
+      </h5>
+
+      <a href="javascript:void(0);" class="d-flex align-items-center">
+        <span class="avatar avatar-md me-2">
+          <img [src]="item.user_avatar_url" class="rounded-circle" alt="img">
+        </span>
+        <p class="fs-14">{{ item.user_name }}</p>
+      </a>
+    </div>
+  </div>
+</div>

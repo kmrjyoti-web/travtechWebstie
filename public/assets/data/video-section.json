@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "speed": 500,
+    "download": false
+  },
+  "size": "1400-933",
+  "items": [
+    {
+      "id": "video-01",
+      "url": "https://youtu.be/NSAOrGb9orM",
+      "iconClass": "isax isax-play5",
+      "anchorClass": "video-btn video-effect"
+    }
+  ]
+}

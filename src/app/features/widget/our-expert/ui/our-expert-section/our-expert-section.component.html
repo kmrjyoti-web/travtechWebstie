@@ -1,0 +1,36 @@
+<section class="section experts-section">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-10 text-center aos"
+                 [attr.data-aos]="store.vm()?.aos?.name"
+                 [attr.data-aos-duration]="store.vm()?.aos?.duration">
+                <div class="section-header text-center">
+                    <h2 class="mb-2">
+                        {{ store.vm()?.header?.titlePrefix }}
+                        <span class="text-primary text-decoration-underline">{{ store.vm()?.header?.titleHighlight }}</span>
+                        {{ store.vm()?.header?.titleSuffix }}
+                    </h2>
+                    <p class="sub-title">{{ store.vm()?.header?.subtitle }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row experts-slider nav-center">
+            @for (it of (store.vm()?.items ?? []); track it.id) {
+                <div class="col-lg-4">
+                    <app-our-expert-card [item]="it"></app-our-expert-card>
+                </div>
+            }
+        </div>
+
+        <div class="text-center view-all aos">
+            <a [routerLink]="routes[store.vm()?.viewAll?.routeKey ?? 'team']"
+               class="btn btn-dark">
+                {{ store.vm()?.viewAll?.label }}
+                <i class="isax isax-arrow-right-3 ms-2"></i>
+            </a>
+        </div>
+
+    </div>
+</section>
