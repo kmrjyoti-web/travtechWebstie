@@ -2227,7 +2227,71 @@
     <div class="container">
 
         @if (!t) {
-        <div class="alert alert-info mb-0">Loading travel document...</div>
+        <!-- Skeleton Loader -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Hero Placeholder -->
+                <div class="card shadow-none mb-4" aria-hidden="true">
+                    <div class="card-body p-0">
+                        <p class="placeholder-glow mb-0">
+                            <span class="placeholder col-12 rounded" style="height: 350px;"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-8">
+                <!-- Title Placeholder -->
+                <div class="mb-4" aria-hidden="true">
+                    <p class="placeholder-glow">
+                        <span class="placeholder col-6 mb-2" style="height: 28px;"></span>
+                        <span class="placeholder col-4 d-block" style="height: 20px;"></span>
+                    </p>
+                </div>
+
+                <!-- Content Placeholders -->
+                <div class="card shadow-none mb-4" aria-hidden="true">
+                    <div class="card-body">
+                        <p class="placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Itinerary Placeholder -->
+                <div class="card shadow-none mb-4" aria-hidden="true">
+                    <div class="card-body">
+                        <p class="placeholder-glow mb-3">
+                            <span class="placeholder col-5 mb-2" style="height: 24px;"></span>
+                        </p>
+                        <p class="placeholder-glow">
+                            <span class="placeholder col-12 mb-3" style="height: 60px;"></span>
+                            <span class="placeholder col-12 mb-3" style="height: 60px;"></span>
+                            <span class="placeholder col-12" style="height: 60px;"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <!-- Sidebar Placeholder -->
+                <div class="card shadow-none mb-4" aria-hidden="true">
+                    <div class="card-body">
+                        <p class="placeholder-glow">
+                            <span class="placeholder col-6 mb-3" style="height: 24px;"></span>
+                            <span class="placeholder col-12 mb-2"></span>
+                            <span class="placeholder col-12 mb-2"></span>
+                            <span class="placeholder col-12 mb-2"></span>
+                            <span class="placeholder col-8"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         }
 
         @if (t) {
